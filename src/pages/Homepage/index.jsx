@@ -14,7 +14,7 @@ const HomepagePage = () => {
           <div className="flex flex-row md:gap-[40px] items-center justify-between ml-[164px] mr-[181px] my-[15px] w-[76%]">
             <div className="header-row ">
               <Img
-                src="images/img_group642.svg"
+                src="/images/fz-low-resolution-color-logo-transparent.png"
                 className="h-[50px]"
                 alt="Group642"
               />
@@ -55,6 +55,22 @@ const HomepagePage = () => {
               >
                 Contact
               </Text>
+
+              <a
+                href="https://drive.google.com/file/d/1vw2aeYxvKTqKue3OSG-MW7-0sHUwYIwx/view?usp=sharing"
+                target="_blank"
+              >
+                <Text
+                  className="common-pointer font-bold text-black_900 text-left w-[auto]"
+                  variant="body3"
+                >
+                  Resume
+                </Text>
+              </a>
+
+
+
+
             </div>
           </div>
         </header>

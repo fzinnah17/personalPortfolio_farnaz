@@ -5,7 +5,7 @@ import NotFound from "pages/NotFound";
 const Contact = React.lazy(() => import("pages/Contact"));
 const Works = React.lazy(() => import("pages/Works"));
 const About = React.lazy(() => import("pages/About"));
-const Homepage = React.lazy(() => import("pages/Homepage"));
+const Homepage = React.lazy(() => import("pages/Homepage/index"));
 const ProjectRoutes = () => {
   return (
     <React.Suspense fallback={<>Loading...</>}>
