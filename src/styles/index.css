@@ -161,3 +161,7 @@ ul li a{
   flex-direction: column;
   list-style-type: none;
 }
+
+.social-icon:not(:last-child) {
+  margin-right: 10px;
+}

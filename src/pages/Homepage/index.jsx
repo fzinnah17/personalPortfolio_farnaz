@@ -2,7 +2,12 @@ import React from "react";
 
 import { Img, Text, Button, List } from "components";
 import Footer from "components/Footer";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Icon } from 'react-icons';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { MdWavingHand } from 'react-icons/md';
+
+
 
 const HomepagePage = () => {
   const navigate = useNavigate();
@@ -67,16 +72,12 @@ const HomepagePage = () => {
                   Resume
                 </Text>
               </a>
-
-
-
-
             </div>
           </div>
         </header>
         <div className="flex flex-col items-start justify-start w-[100%]">
           <div className="h-[646px] max-w-[1181px] mx-[auto] md:px-[20px] relative w-[100%]">
-            <div className="absolute bg-cyan_50 h-[646px] inset-[0] justify-center m-[auto] rounded-[35px] w-[100%]"></div>
+            {/* <div className="absolute bg-white h-[646px] inset-[0] justify-center m-[auto] rounded-[35px] w-[100%]"></div> */}
             <div className="absolute h-[473px] inset-y-[0] my-[auto] right-[0] md:w-[100%] w-[94%]">
               <Img
                 src="images/img_group665.png"
@@ -88,35 +89,38 @@ const HomepagePage = () => {
                   className="leading-[80.00px] text-black_900 text-left w-[100%]"
                   as="h1"
                   variant="h1"
-                ></Text>
+                >
+                  Hello! 👋 My name is{' '}
+                  <span className="font-bold text-[#FF7F50]">John Doe</span>.
+                </Text>
                 <Text
                   className="font-normal leading-[35.00px] md:ml-[0] ml-[3px] mt-[25px] not-italic text-black_900_60 text-left sm:w-[100%] w-[73%]"
                   variant="body2"
                 >
-                  Maximize your business with a variety of services and services
-                  from us
+                  I love working as a{' '}
+                  <span className="font-bold text-[#FF7F50]">full-stack developer</span>.
+                  Passionate about crafting captivating and intuitive web experiences,
+                  exceeding expectations is always the goal.
                 </Text>
-                <div className="flex sm:flex-col flex-row gap-[24px] items-center justify-start mt-[39px] rounded-[5px] md:w-[100%] w-[71%]">
-                  <Button
-                    className="cursor-pointer font-bold leading-[normal] min-w-[201px] text-[16px] text-center text-white_A700 w-[auto]"
-                    shape="RoundedBorder5"
-                    size="md"
-                    variant="FillBlack900"
-                  >
-                    Contact Us
-                  </Button>
-                  <Button
-                    className="cursor-pointer font-bold leading-[normal] min-w-[201px] text-[16px] text-black_900 text-center w-[auto]"
-                    shape="RoundedBorder5"
-                    size="md"
-                    variant="OutlineBlack900"
-                  >
-                    About Us
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
+          <div className="fixed top-0 bottom-0 left-0 w-16 bg-gray-900">
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-16 w-16 text-gray-400 hover:text-white">
+              <FaGithub size={24} />
+            </a>
+            <a href="https://linkedin.com/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-16 w-16 text-gray-400 hover:text-white">
+              <FaLinkedin size={24} />
+            </a>
+            <Link to="/contact" className="flex items-center justify-center h-16 w-16 text-gray-400 hover:text-white">
+              <FaEnvelope size={24} />
+            </Link>
+            <Link to="/about" className="flex items-center justify-center h-16 w-16 text-gray-400 hover:text-white">
+              <MdWavingHand size={24} />
+            </Link>
+          </div>
+
+
           <div className="flex flex-col gap-[40px] items-center justify-start max-w-[1181px] mt-[100px] mx-[auto] md:px-[20px] w-[100%]">
             <div className="flex flex-row md:gap-[40px] items-center justify-between w-[100%]">
               <Text
