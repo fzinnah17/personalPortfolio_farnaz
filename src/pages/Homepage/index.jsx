@@ -1,16 +1,54 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { animated, useSpring } from 'react-spring';
 import { Img, Text, Button, List } from "components";
 import Footer from "components/Footer";
 import { Link, useNavigate } from "react-router-dom";
-import { Icon } from 'react-icons';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { MdWavingHand } from 'react-icons/md';
+import { MdWavingHand, MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from 'react-icons/md';
 
 
+const AnimatedText = animated(Text);
 
+const AnimatedPassionateText = () => {
+  const [style, set] = useSpring(() => ({ y: 100, opacity: 0 }));
+
+  useEffect(() => {
+    set({ y: 0, opacity: 1 });
+  }, [set]);
+
+  return (
+    <AnimatedText style={style} className="font-regular text-[#333333] block">
+      Passionate about crafting captivating and intuitive web experiences,
+      exceeding expectations is always the goal.
+    </AnimatedText>
+  );
+};
 const HomepagePage = () => {
   const navigate = useNavigate();
+  const [showScrollDownArrow, setShowScrollDownArrow] = useState(true);
+  const [showScrollUpArrow, setShowScrollUpArrow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const bottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+      setShowScrollDownArrow(!bottom);
+      setShowScrollUpArrow(bottom);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScrollToContent = () => {
+    const content = document.getElementById('content');
+    if (content) {
+      content.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -77,13 +115,8 @@ const HomepagePage = () => {
         </header>
         <div className="flex flex-col items-start justify-start w-[100%]">
           <div className="h-[646px] max-w-[1181px] mx-[auto] md:px-[20px] relative w-[100%]">
-            {/* <div className="absolute bg-white h-[646px] inset-[0] justify-center m-[auto] rounded-[35px] w-[100%]"></div> */}
             <div className="absolute h-[473px] inset-y-[0] my-[auto] right-[0] md:w-[100%] w-[94%]">
-              <Img
-                src="images/img_group665.png"
-                className="absolute h-[473px] inset-y-[0] my-[auto] object-cover right-[0] w-[50%]"
-                alt="group665"
-              />
+
               <div className="absolute flex flex-col items-start justify-start left-[0] rounded-[5px] top-[10%] w-[55%]">
                 <Text
                   className="leading-[80.00px] text-black_900 text-left w-[100%]"
@@ -91,17 +124,20 @@ const HomepagePage = () => {
                   variant="h1"
                 >
                   Hello! 👋 My name is{' '}
-                  <span className="font-bold text-[#FF7F50]">John Doe</span>.
+                  <span className="font-bold text-[#FF7F50]">Farnaz </span>
+                  <span className="font-bold text-[#FF7F50]">Zinnah</span>.
                 </Text>
+
                 <Text
                   className="font-normal leading-[35.00px] md:ml-[0] ml-[3px] mt-[25px] not-italic text-black_900_60 text-left sm:w-[100%] w-[73%]"
                   variant="body2"
                 >
-                  I love working as a{' '}
-                  <span className="font-bold text-[#FF7F50]">full-stack developer</span>.
-                  Passionate about crafting captivating and intuitive web experiences,
-                  exceeding expectations is always the goal.
+                  <span className="font-regular text-[#333333]">I love working as a{' '}</span>
+                  <span className="font-bold text-[#FF7F50]">full-stack developer.</span>
+                  <AnimatedPassionateText />
+
                 </Text>
+
               </div>
             </div>
           </div>
@@ -119,6 +155,7 @@ const HomepagePage = () => {
               <MdWavingHand size={24} />
             </Link>
           </div>
+
 
 
           <div className="flex flex-col gap-[40px] items-center justify-start max-w-[1181px] mt-[100px] mx-[auto] md:px-[20px] w-[100%]">
@@ -476,9 +513,37 @@ const HomepagePage = () => {
               />
             </Button>
           </div>
+
           <Footer className="bg-gray_801 flex items-center justify-center mt-[70px] md:px-[20px] rounded-bl-[0] rounded-br-[0] rounded-tl-[0] rounded-tr-[50px] w-[100%]" />
         </div>
       </div>
+      <div className="fixed bottom-10 right-10 z-50">
+        {showScrollDownArrow && (
+          <MdOutlineKeyboardDoubleArrowDown
+            className="text-[#333333] animate-bounce text-4xl cursor-pointer"
+            onClick={handleScrollToContent}
+            onMouseEnter={(e) => {
+              e.currentTarget.classList.add("animate-ping");
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.classList.remove("animate-ping");
+            }}
+          />
+        )}
+        {showScrollUpArrow && (
+          <MdOutlineKeyboardDoubleArrowUp
+            className="text-[#333333] animate-bounce text-4xl cursor-pointer"
+            onClick={handleScrollToTop}
+            onMouseEnter={(e) => {
+              e.currentTarget.classList.add("animate-ping");
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.classList.remove("animate-ping");
+            }}
+          />
+        )}
+      </div>
+
     </>
   );
 };
