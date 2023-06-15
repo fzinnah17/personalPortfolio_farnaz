@@ -1,0 +1,21 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 6rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.sidebar-item:hover {
+  color: white;
+}
