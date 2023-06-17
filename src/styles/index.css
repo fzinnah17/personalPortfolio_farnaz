@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   line-height: normal;
 }
@@ -197,5 +197,60 @@ ul li a{
   100% {
     transform: translateY(0);
   }
+}
+ */
+
+
+ /* index.css */
+body.light-mode {
+  color: black;
+  background-color: white;
+}
+
+body.dark-mode {
+  color: white;
+  background-color: black;
+}
+
+.main-menu.light-mode {
+  /* Light mode styles */
+}
+
+.main-menu.dark-mode {
+  /* Dark mode styles */
+}
+
+/* Add your existing styles for .main-menu, .main-menu ul, .main-menu li, .main-menu li > a, .main-menu .nav-icon, .main-menu .nav-text, .main-menu > ul.logout, and other relevant selectors */
+
+.light-mode .fa.fa-home {
+  background-image: url("https://icons8.com/icon/73/home");
+}
+
+.dark-mode .fa.fa-home {
+  background-image: url("https://icons8.com/icon/2797/home");
+}
+
+.light-mode .fa.fa-globe {
+  background-image: url("https://icons8.com/icon/bZGWfxY6L1f0/about-me");
+}
+
+.dark-mode .fa.fa-globe {
+  background-image: url("https://icons8.com/icon/HAwVrqHslq0F/about-me");
+}
+
+.light-mode .fa.fa-comments {
+  background-image: url("https://icons8.com/icon/91898/permanent-job");
+}
+
+.dark-mode .fa.fa-comments {
+  background-image: url("https://icons8.com/icon/91939/permanent-job");
+}
+
+.light-mode .fa.fa-camera-retro {
+  background-image: url("https://icons8.com/icon/53380/project");
+}
+
+.dark-mode .fa.fa-camera-retro {
+  background-image: url("https://icons8.com/icon/53428/project");
 }
 

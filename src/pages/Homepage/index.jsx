@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from 'react-icons/md';
-import Header from "./Header";
 import IntroWords from "./IntroWords";
 import Sidebar from "./Sidebar";
 import AboutMe from "./AboutMe";
 import Experience from "./Experience";
 import Projects from "./Projects";
 
-const HomepagePage = () => {
+const HomePage = () => {
   const navigate = useNavigate();
   const [showScrollDownArrow, setShowScrollDownArrow] = useState(true);
   const [showScrollUpArrow, setShowScrollUpArrow] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,10 +35,22 @@ const HomepagePage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleModeToggle = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDarkMode) {
+      root.classList.add("dark-mode");
+    } else {
+      root.classList.remove("dark-mode");
+    }
+  }, [isDarkMode]);
+
   return (
     <>
       <div className="bg-white_A700 flex flex-col font-sourcesanspro gap-[54px] items-center justify-start mx-[auto] w-[100%]">
-        <Header />
         <div className="flex flex-col items-start justify-start w-[100%]">
           <IntroWords />
           <Sidebar />
@@ -78,4 +90,4 @@ const HomepagePage = () => {
   );
 };
 
-export default HomepagePage;
+export default HomePage;
