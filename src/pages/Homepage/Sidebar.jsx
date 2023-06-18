@@ -26,7 +26,7 @@
 // export default Sidebar;
 
 import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaHome, FaFemale } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { MdWavingHand } from 'react-icons/md';
 import { MdHome, MdInfo, MdWork, MdLibraryBooks } from 'react-icons/md';
@@ -43,23 +43,21 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="logo-container">
-        <img src="/images/logo.png" alt="Logo" className="logo" />
+        <img src="/images/fz-low-resolution-color-logo-transparent.png" alt="Logo" className="logo" />
       </div>
-      <div className="sidebar-item" onClick={() => handleScroll("home")}>
-        <MdHome size={24} />
-        <span className="sidebar-tooltip">Home</span>
-      </div>
-      <div className="sidebar-item" onClick={() => handleScroll("about-me")}>
-        <MdInfo size={24} />
-        <span className="sidebar-tooltip">About</span>
+      <div className="sidebar-item" onClick={() => handleScroll("home")} title="Home">
+  <FaHome size={24} />
+</div>
+
+
+      <div className="sidebar-item" onClick={() => handleScroll("about-me")} title= "About Me">
+        <FaFemale size={24} />
       </div>
       <div className="sidebar-item" onClick={() => handleScroll("experiences")}>
         <MdWork size={24} />
-        <span className="sidebar-tooltip">Experiences</span>
       </div>
       <div className="sidebar-item" onClick={() => handleScroll("projects")}>
         <MdLibraryBooks size={24} />
-        <span className="sidebar-tooltip">Projects</span>
       </div>
       <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="sidebar-item">
         <FaGithub size={24} />
@@ -67,10 +65,10 @@ const Sidebar = () => {
       <a href="https://linkedin.com/yourusername" target="_blank" rel="noopener noreferrer" className="sidebar-item">
         <FaLinkedin size={24} />
       </a>
-      <Link to="/contact" className="sidebar-item">
+      <Link to="/" className="sidebar-item">
         <FaEnvelope size={24} />
       </Link>
-      <Link to="/about" className="sidebar-item">
+      <Link to="/" className="sidebar-item">
         <MdWavingHand size={24} />
       </Link>
     </div>
