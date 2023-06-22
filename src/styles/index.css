@@ -202,7 +202,7 @@ ul li a{
 
 
  /* index.css */
-body.light-mode {
+/* body.light-mode {
   color: black;
   background-color: white;
 }
@@ -213,16 +213,16 @@ body.dark-mode {
 }
 
 .main-menu.light-mode {
-  /* Light mode styles */
+  
 }
 
 .main-menu.dark-mode {
-  /* Dark mode styles */
-}
+
+} */
 
 /* Add your existing styles for .main-menu, .main-menu ul, .main-menu li, .main-menu li > a, .main-menu .nav-icon, .main-menu .nav-text, .main-menu > ul.logout, and other relevant selectors */
 
-.light-mode .fa.fa-home {
+/* .light-mode .fa.fa-home {
   background-image: url("https://icons8.com/icon/73/home");
 }
 
@@ -252,5 +252,5 @@ body.dark-mode {
 
 .dark-mode .fa.fa-camera-retro {
   background-image: url("https://icons8.com/icon/53428/project");
-}
+} */
 

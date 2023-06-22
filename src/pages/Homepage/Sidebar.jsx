@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaHome, FaFemale } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { MdWavingHand } from 'react-icons/md';
@@ -6,12 +6,14 @@ import { MdWork, MdLibraryBooks } from 'react-icons/md';
 import "./Sidebar.css";
 
 const Sidebar = () => {
+  const [activeSection, setActiveSection] = useState("");
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
 
   return (
     <div className="sidebar">

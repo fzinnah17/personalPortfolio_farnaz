@@ -1,4 +1,4 @@
-.header {
+/* .header {
     display: flex;
     items-center: center;
     justify-content: center;
@@ -83,11 +83,11 @@
     border-radius: 4px;
     font-size: 14px;
     white-space: nowrap;
-    opacity: 0; /* Hide the text initially */
+    opacity: 0; 
     transition: opacity 0.3s ease-in-out;
   }
   
   .sidebar-item:hover::before {
-    opacity: 1; /* Show the text on hover */
+    opacity: 1; 
   }
-  
+   */
