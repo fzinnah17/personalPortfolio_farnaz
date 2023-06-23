@@ -20,39 +20,37 @@ const IntroWords = () => {
   }, []);
 
   return (
-    <>
-      <div className="intro-container">
-        <div className="intro-content">
-          <div className="intro-text">
+    <div className="intro-container">
+      <div className="intro-content intro-section">
+        <div className="intro-text">
+          <Text
+            className="intro-heading"
+            as="h1"
+            variant="h1"
+          >
+            Hello,
+            <span className="bold-text">Jane </span>
+            <span className="bold-text">Here! 👋</span>.
+          </Text>
+
+          <div className="paragraph-container">
             <Text
-              className="intro-heading"
-              as="h1"
-              variant="h1"
+              className="intro-description"
+              variant="body2"
             >
-              Hello, 
-              <span className="bold-text">Jane </span>
-              <span className="bold-text">Here! 👋</span>.
+              <span className="regular-text">I love working as a </span>
+              <span className="bold-text">full-stack developer.</span>
             </Text>
-
-            <div className="paragraph-container">
-              <Text
-                className="intro-description"
-                variant="body2"
-              >
-                <span className="regular-text">I love working as a </span>
-                <span className="bold-text">full-stack developer.</span>
-              </Text>
-              <AnimatedPassionateText />
-            </div>
-
-            <a href="mailto:fzinnah000@citymail.cuny.edu" className="intro-contact">
-              <svg className="contact-icon" focusable="false" viewBox="0 0 24 24" aria-hidden="true">@</svg>
-              <span className="contact-text">Say hi!</span>
-            </a>
+            <AnimatedPassionateText />
           </div>
+
+          <button className="intro-contact">
+            <span className="contact-text AnimatedText">SAY HI</span>
+          </button>
+
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
