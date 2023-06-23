@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Text } from "components";
-import { MdWavingHand } from 'react-icons/md';
 import AnimatedPassionateText from "./AnimatedPassionateText.jsx";
 import "./IntroWords.css";
 

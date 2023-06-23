@@ -1,256 +1,34 @@
-/* * {
-  box-sizing: border-box;
-  line-height: normal;
-}
-body {
-  font-family: "Roboto", sans-serif !important;
-  margin: 0;
-  padding: 0;
-}
-.dhiwise-code,
-.dhiwise-navigation {
-  min-height: 100%;
-}
-.common-pointer {
-  cursor: pointer;
-}
-.dhiwise-navigation {
-  padding: 20px;
-  background-color: #232323;
-}
-.dhiwise-navigation h1 {
-  color: white;
-}
-.dhiwise-navigation .headline {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: white;
-}
-.dhiwise-navigation ul {
-  padding: 0;
-}
-.dhiwise-navigation ul li {
-  list-style: none;
-  margin-right: 20px;
-  font-size: 16px;
-  font-weight: bold;
-}
-.dhiwise-navigation a {
-  color: #132cdc;
-}
-table {
-  border-spacing: 0;
-  width: 100%;
-}
-.common-select {
-  z-index: 10000;
-}
-.react-datepicker-popper {
-  z-index: 100000 !important;
-}
-.drawable-icon{
-  position: absolute;
-  margin: auto;
-  z-index: 1000;
-}
-.input-wrap{
-  position: relative;
-}
-option{
-  color: #000;
-}
-.table-wrap{
-  overflow: auto;
-}
-input:focus{
-  outline:none;
-}
-.ReactModal__Body--open{
-  overflow: hidden;
-}
-  .slider-indicator:first-child {
-    margin-left: 0;
-}
-
-.slider-indicator:last-child {
-margin-right: 0;
-}
-
-.rc-drawer-content-wrapper{
-  width: 100% !important;
-}
-.rc-drawer-right .rc-drawer-content-wrapper{
-  display: flex;
-  justify-content: flex-end;
-}
-.rc-drawer-left .rc-drawer-content-wrapper{
-  display: flex;
-  justify-content: flex-start;
-}
-.ReactModal__Overlay{
-  z-index: 1051;
-}
-
-ul li a{
-  display: block;
-}
-
-.mobile-menu div{
-  height: 1.5px;
-  width: 20px;
-  background-color: #000;
-  margin:4px 0;
-}
-.mobile-menu {
-  display: none;
-  cursor: pointer;
-}
-.header-row{
-  align-items:center;
-  justify-content: space-between;
-  display: flex;
-}
-@media only screen and (min-width: 200px) and (max-width: 550px)  {
-  .mobile-menu {
-    display: block;
-  }
-  .header-row{
-    width: 100% !important;
-  }
-  .display-block{
-    display: block;
-  }
-  .display-none{
-    display: none;
-  }
-  .common-row-list > ul{
-    padding-left: 10px;
-    padding-right: 10px;
-    flex-wrap: wrap;
-  }
-}
-.menu-close-icon {
-  position: absolute;
-  right: 16px;
-  top: 16px;
-}
-.menu-overlay{
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0.7;
+.splash-container {
   position: fixed;
-  left: 0px;
-  top: 0px;
-}
-.close-line1{
-  transform: translate(0, 6px) rotate(-45deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-}
-.close-line2{
-  transform: translate(0, 0) rotate(45deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-}
-.common-row-list > ul{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
   display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  animation: splashFadeOut 0.9s ease-in-out forwards;
 }
 
-.common-column-list > ul{
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
+.logo {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
 }
 
-.social-icon:not(:last-child) {
-  margin-right: 10px;
-}
-
-.scroll-down {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  margin-left: -10px;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  animation: scroll 2s ease-in-out infinite;
-}
-
-.scroll-down span {
-  position: absolute;
-  top: calc(50% - 6px);
-  left: calc(50% - 3px);
-  border-left: 4px solid #fff;
-  border-bottom: 4px solid #fff;
-  transform: rotate(-45deg);
-}
-
-@keyframes scroll {
+@keyframes splashFadeOut {
   0% {
-    transform: translateY(0);
+    opacity: 1;
   }
+
   50% {
-    transform: translateY(10px);
+    opacity: 1;
   }
+
   100% {
-    transform: translateY(0);
+    opacity: 0;
   }
 }
- */
-
-
- /* index.css */
-/* body.light-mode {
-  color: black;
-  background-color: white;
-}
-
-body.dark-mode {
-  color: white;
-  background-color: black;
-}
-
-.main-menu.light-mode {
-  
-}
-
-.main-menu.dark-mode {
-
-} */
-
-/* Add your existing styles for .main-menu, .main-menu ul, .main-menu li, .main-menu li > a, .main-menu .nav-icon, .main-menu .nav-text, .main-menu > ul.logout, and other relevant selectors */
-
-/* .light-mode .fa.fa-home {
-  background-image: url("https://icons8.com/icon/73/home");
-}
-
-.dark-mode .fa.fa-home {
-  background-image: url("https://icons8.com/icon/2797/home");
-}
-
-.light-mode .fa.fa-globe {
-  background-image: url("https://icons8.com/icon/bZGWfxY6L1f0/about-me");
-}
-
-.dark-mode .fa.fa-globe {
-  background-image: url("https://icons8.com/icon/HAwVrqHslq0F/about-me");
-}
-
-.light-mode .fa.fa-comments {
-  background-image: url("https://icons8.com/icon/91898/permanent-job");
-}
-
-.dark-mode .fa.fa-comments {
-  background-image: url("https://icons8.com/icon/91939/permanent-job");
-}
-
-.light-mode .fa.fa-camera-retro {
-  background-image: url("https://icons8.com/icon/53380/project");
-}
-
-.dark-mode .fa.fa-camera-retro {
-  background-image: url("https://icons8.com/icon/53428/project");
-} */
-

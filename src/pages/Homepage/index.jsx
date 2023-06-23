@@ -12,6 +12,7 @@ const HomePage = () => {
   const [showScrollDownArrow, setShowScrollDownArrow] = useState(true);
   const [showScrollUpArrow, setShowScrollUpArrow] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showLogo, setShowLogo] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +23,14 @@ const HomePage = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowLogo(false);
+    }, 4000);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   const handleScrollToContent = () => {
@@ -50,6 +59,12 @@ const HomePage = () => {
 
   return (
     <>
+      {showLogo && (
+        <div className="splash-container">
+          <img src="/images/fz-low-resolution-color-logo-transparent.png" alt="Logo" className="logo" />
+        </div>
+      )}
+
       <div className="bg-white_A700 flex flex-col font-sourcesanspro gap-[54px] items-center justify-start mx-[auto] w-[100%]">
         <div className="flex flex-col items-start justify-start w-[100%]">
           <IntroWords />
@@ -59,6 +74,7 @@ const HomePage = () => {
           <Projects />
         </div>
       </div>
+
       <div className="fixed bottom-10 right-10 z-50">
         {showScrollDownArrow && (
           <MdOutlineKeyboardDoubleArrowDown
@@ -85,9 +101,9 @@ const HomePage = () => {
           />
         )}
       </div>
-
     </>
   );
 };
 
 export default HomePage;
+
