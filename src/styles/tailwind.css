@@ -6,7 +6,6 @@
 :root {
   --primary-color: #000000;
 }
-/* Override default focus colors for tailwindcss-forms https://github.com/tailwindlabs/tailwindcss-forms */
 [type='text']:focus,
 [type='email']:focus,
 [type='url']:focus,

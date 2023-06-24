@@ -5,16 +5,31 @@ import { Text } from "components";
 const AnimatedText = animated(Text);
 
 const AnimatedPassionateText = () => {
-  const [style, set] = useSpring(() => ({ y: 100, opacity: 0 }));
+  const [style, set] = useSpring(() => ({ opacity: 0, y: 100 }));
 
   useEffect(() => {
-    set({ y: 0, opacity: 1 });
+    const timeout = setTimeout(() => {
+      set({ opacity: 1, y: 0 });
+    }, 1500);
+
+    return () => clearTimeout(timeout);
   }, [set]);
 
   return (
-    <AnimatedText style={style} className="font-regular text-[#333333] block">
+    <AnimatedText style={style}>
       Passionate about crafting captivating and intuitive web experiences,
       exceeding expectations is always the goal.
+      Passionate about crafting captivating and intuitive web experiences,
+      exceeding expectations is always the goal.
+      Passionate about crafting captivating and intuitive web experiences,
+      exceeding expectations is always the goal.
+      Passionate about crafting captivating and intuitive web experiences,
+      exceeding expectations is always the goal.
+      Passionate about crafting captivating and intuitive web experiences,
+      exceeding expectations is always the goal.
+      Passionate about crafting captivating and intuitive web experiences,
+      exceeding expectations is always the goal.
+      
     </AnimatedText>
   );
 };
