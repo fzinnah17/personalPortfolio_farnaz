@@ -75,20 +75,20 @@ const HomePage = () => {
         </div>
       </div> */}
 
-        <div className="intro-section">
-          <IntroWords />
-        </div>
-        <Sidebar />
-        <div className="about-me-section">
-          <AboutMe />
-        </div>
-        <div className="experience-section">
-          <Experience />
-        </div>
-        <div className="projects-section">
-          <Projects />
-        </div>
- 
+      <div className="intro-section">
+        <IntroWords />
+      </div>
+      <Sidebar />
+      <div className="about-me-section">
+        <AboutMe />
+      </div>
+      <div className="experience-section">
+        <Experience />
+      </div>
+      <div className="projects-section">
+        <Projects />
+      </div>
+
 
 
       <div className="fixed bottom-10 right-10 z-50">
