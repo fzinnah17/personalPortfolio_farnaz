@@ -64,7 +64,7 @@ const HomePage = () => {
           <img src="/images/fz-low-resolution-color-logo-transparent.png" alt="Logo" className="logo" />
         </div>
       )}
-
+      {/* 
       <div className="bg-white_A700 flex flex-col font-sourcesanspro gap-[54px] items-center justify-start mx-[auto] w-[100%]">
         <div className="flex flex-col items-start justify-start w-[100%]">
           <IntroWords />
@@ -73,7 +73,23 @@ const HomePage = () => {
           <Experience />
           <Projects />
         </div>
-      </div>
+      </div> */}
+
+        <div className="intro-section">
+          <IntroWords />
+        </div>
+        <Sidebar />
+        <div className="about-me-section">
+          <AboutMe />
+        </div>
+        <div className="experience-section">
+          <Experience />
+        </div>
+        <div className="projects-section">
+          <Projects />
+        </div>
+ 
+
 
       <div className="fixed bottom-10 right-10 z-50">
         {showScrollDownArrow && (

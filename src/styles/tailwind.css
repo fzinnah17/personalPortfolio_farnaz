@@ -1,11 +1,52 @@
-
-    @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+  overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.intro-section {
+  background-color: pink;
+  background-size: cover;
+  background-position: center;
+  /* Additional styling for the intro section */
+}
+
+.about-me-section {
+  background-color: blue;
+  background-size: cover;
+  background-position: center;
+  /* Additional styling for the about me section */
+}
+
+.experience-section {
+  background-color: purple;
+  background-size: cover;
+  background-position: center;
+  /* Additional styling for the experience section */
+}
+
+.projects-section {
+  background-color: orange;
+  background-size: cover;
+  background-position: center;
+  /* Additional styling for the projects section */
+}
+
+
+/* Hide vertical scroll bar */
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 
 :root {
   --primary-color: #000000;
 }
+
 [type='text']:focus,
 [type='email']:focus,
 [type='url']:focus,
@@ -22,32 +63,49 @@ select:focus {
   border-color: var(--primary-color);
 }
 
-.react-datepicker-wrapper .react-datepicker__input-container input{
+.react-datepicker-wrapper .react-datepicker__input-container input {
   background-color: transparent;
   border: none;
   width: 100%;
   padding: 0px;
 }
+
 .react-datepicker__day.react-datepicker__day--keyboard-selected {
   background: none;
   color: black;
 }
-input:focus, textarea:focus{
-  outline:none !important;
+
+input:focus,
+textarea:focus {
+  outline: none !important;
   outline-offset: 0 !important;
-  --tw-ring-offset-width:none !important;
+  --tw-ring-offset-width: none !important;
 }
 
-li:focus-visible{
+li:focus-visible {
   outline: none;
 }
 
-li:hover{
+li:hover {
   cursor: pointer;
 }
 
-.tab-panel--selected { animation-name: tabPanel; animation-duration: 300ms; animation-timing-function: linear; }
-@keyframes tabPanel { from { opacity: 0; } to { opacity: 1; } }
+.tab-panel--selected {
+  animation-name: tabPanel;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+}
+
+@keyframes tabPanel {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* Input style */
 .input-container {
   position: relative;
@@ -64,4 +122,3 @@ li:hover{
 .input-container input {
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
 }
-
