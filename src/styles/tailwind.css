@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   overflow-x: hidden;
   background-size: cover;
   background-position: center;
@@ -12,8 +12,236 @@ body{
   background-color: pink;
   background-size: cover;
   background-position: center;
-  /* Additional styling for the intro section */
 }
+
+
+.intro-section .section-container {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 90px;
+  gap: 45px;
+}
+
+.intro-section .intro-content {
+  padding-right: 20px;
+  width: 90%;
+}
+
+.intro-section .intro-text {
+  padding: 25px;
+}
+
+.intro-section .📦 {
+  width: 33px;
+  height: 33px;
+  position: relative;
+  display: block;
+  transform-origin: -50% center;
+  border-radius: 15%;
+}
+
+.intro-section .📦:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: lightblue;
+  border-radius: 15%;
+  /* Customize as needed */
+  box-shadow: 0px 0px 10px 0px rgba(28, 159, 255, 0.4);
+}
+
+.intro-section .📦:nth-child(1) {
+  animation: slide 1.5s ease-in-out infinite alternate;
+}
+
+.intro-section .📦:nth-child(2) {
+  animation: flip-1 1.5s ease-in-out infinite alternate;
+}
+
+.intro-section .📦:nth-child(3) {
+  animation: flip-2 1.5s ease-in-out infinite alternate;
+}
+
+.intro-section .📦:nth-child(4) {
+  animation: flip-3 1.5s ease-in-out infinite alternate;
+}
+
+.intro-section .📦:nth-child(5) {
+  animation: flip-4 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes slide {
+  0% {
+    background-color: #1795FF;
+    transform: translatex(0vw);
+  }
+
+  100% {
+    background-color: #23D3FB;
+    transform: translatex(calc(250px - (33px * 1.25)));
+    /* Customize as needed */
+  }
+}
+
+@keyframes flip-1 {
+
+  0%,
+  15% {
+    transform: rotate(0);
+  }
+
+  35%,
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes flip-2 {
+
+  0%,
+  30% {
+    transform: rotate(0);
+  }
+
+  50%,
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes flip-3 {
+
+  0%,
+  45% {
+    transform: rotate(0);
+  }
+
+  65%,
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes flip-4 {
+
+  0%,
+  60% {
+    transform: rotate(0);
+  }
+
+  80%,
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes squidge-1 {
+  5% {
+    transform-origin: center bottom;
+    transform: scalex(1.3) scaley(0.7);
+  }
+
+  15%,
+  20% {
+    transform-origin: center bottom;
+    transform: scalex(1) scaley(1);
+  }
+
+  30% {
+    transform-origin: center top;
+    transform: scalex(1.3) scaley(0.7);
+  }
+
+  40%,
+  45% {
+    transform-origin: center top;
+    transform: scalex(1) scaley(1);
+  }
+}
+
+@keyframes squidge-2 {
+  35% {
+    transform-origin: center bottom;
+    transform: scalex(1.3) scaley(0.7);
+  }
+
+  45%,
+  50% {
+    transform-origin: center bottom;
+    transform: scalex(1) scaley(1);
+  }
+
+  60% {
+    transform-origin: center top;
+    transform: scalex(1.3) scaley(0.7);
+  }
+
+  70%,
+  75% {
+    transform-origin: center top;
+    transform: scalex(1) scaley(1);
+  }
+}
+
+@keyframes squidge-3 {
+  65% {
+    transform-origin: center bottom;
+    transform: scalex(1.3) scaley(0.7);
+  }
+
+  75%,
+  80% {
+    transform-origin: center bottom;
+    transform: scalex(1) scaley(1);
+  }
+
+  85% {
+    transform-origin: center top;
+    transform: scalex(1.3) scaley(0.7);
+  }
+
+  90%,
+  95% {
+    transform-origin: center top;
+    transform: scalex(1) scaley(1);
+  }
+}
+
+@keyframes squidge-4 {
+  95% {
+    transform-origin: center bottom;
+    transform: scalex(1.3) scaley(0.7);
+  }
+
+  100% {
+    transform-origin: center bottom;
+    transform: scalex(1) scaley(1);
+  }
+}
+
+/* Additional styling for 📦 elements */
+.intro-section .📦:nth-child(2):after {
+  background-color: #1C9FFF;
+}
+
+.intro-section .📦:nth-child(3):after {
+  background-color: #1FB1FD;
+}
+
+.intro-section .📦:nth-child(4):after {
+  background-color: #22C7FB;
+}
+
+.intro-section .📦:nth-child(5):after {
+  background-color: #23D3FB;
+}
+
+
 
 .about-me-section {
   background-color: blue;

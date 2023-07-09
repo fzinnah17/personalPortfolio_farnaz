@@ -3,6 +3,7 @@ import { Text } from "components";
 import AnimatedPassionateText from "./AnimatedPassionateText.jsx";
 import "./IntroWords.css";
 
+
 const IntroWords = () => {
   const [showScrollDownArrow, setShowScrollDownArrow] = useState(true);
   const [showScrollUpArrow, setShowScrollUpArrow] = useState(false);
@@ -24,16 +25,25 @@ const IntroWords = () => {
     const timeout = setTimeout(() => {
       setShowAnimatedText(true);
     }, 1500);
-  
+
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <div className="intro-container">
       <div className="intro-content intro-section">
+        <div className="animation-container">
+          <div className="section-container">
+            <div className="📦"></div>
+            <div className="📦"></div>
+            <div className="📦"></div>
+            <div className="📦"></div>
+            <div className="📦"></div>
+          </div>
+        </div>
         <div className="intro-text">
           <Text className="intro-heading">
-            Hello, 
+            Hello,
             <span className="bold-text"> Jane</span> Here! 👋
           </Text>
 

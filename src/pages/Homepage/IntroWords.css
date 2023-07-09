@@ -12,15 +12,15 @@
   padding-right: 60px;
   width: 55%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  gap: 60px;
 }
 
 .intro-text {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding-left: 60px;
 }
 
 .intro-heading {
@@ -32,13 +32,12 @@
 
 .paragraph-container {
   margin-top: 40px;
-  margin-right: 10px;
-  margin-bottom: 10px;
   width: 100%;
   text-align: right;
 }
 
 .intro-description {
+  text-align: right;
   margin-top: 40px;
   font-size: 35px;
   line-height: 1.43;
@@ -49,7 +48,7 @@
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 2s ease-in-out 1.5s forwards;
-  min-height: 200px;
+  min-height: 100px;
 }
 
 @keyframes fadeIn {
@@ -79,7 +78,6 @@
   font-weight: bolder;
   font-family: "NTR", sans-serif;
   padding: 20px 40px;
-  margin-top: 40px;
   text-align: center;
   cursor: pointer;
   border: 2px solid;
