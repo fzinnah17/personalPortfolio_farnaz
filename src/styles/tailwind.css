@@ -24,6 +24,10 @@ body {
   gap: 45px;
 }
 
+.intro-section .animation-container{
+  margin-right: 30px;
+}
+
 .intro-section .intro-content {
   padding-right: 20px;
   width: 90%;
