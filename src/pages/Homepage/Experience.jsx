@@ -7,9 +7,6 @@ const Experience = () => {
     <div className="experience">
       <div className="experience-container">
         <div className="experience-card">
-          <Button className="cut-button" shape="icbRoundedBorder10" size="smIcn" variant="icbOutlineRed3007c">
-            <Img src="images/img_cut.svg" alt="cut" className="cut-icon" />
-          </Button>
           <div className="experience-details">
             <Text className="experience-role" variant="h6">UIUX Design</Text>
             <Text className="experience-company" variant="body5">We can make your website or application design better with this service</Text>
