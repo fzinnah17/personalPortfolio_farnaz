@@ -34,6 +34,7 @@
 
 import React from "react";
 import { Text, Img } from "components";
+import { FaJsSquare, FaPython, FaReact, FaJava, FaNode, FaHtml5, FaCss3 } from "react-icons/fa";
 
 const AboutMe = () => {
   const playAudio = () => {
@@ -44,7 +45,7 @@ const AboutMe = () => {
     <div className="about-me-section">
       <div className="fade-in-section is-visible">
         <div className="section-header">
-        <span className="pointer" onMouseOver={playAudio}>
+          <span className="pointer" onMouseOver={playAudio}>
             <span className="section-title">It's me, Hi!</span>
           </span>
         </div>
@@ -57,12 +58,18 @@ const AboutMe = () => {
               <a href="https://www.ox.ac.uk/about">University of Oxford</a>.
             </Text>
             <ul className="tech-stack">
-              <li>Javascript ES6+</li>
-              <li>Python</li>
-              <li>React.js</li>
-              <li>Java</li>
-              <li>Node.js</li>
-              <li>HTML &amp; CSS</li>
+              <li>
+                <FaJsSquare className="tech-icon shining-effect" /> Javascript ES6+</li>
+              <li>
+                <FaPython className="tech-icon shining-effect" /> Python</li>
+              <li>
+                <FaReact className="tech-icon shining-effect" /> React.js</li>
+              <li>
+                <FaJava className="tech-icon shining-effect" /> Java</li>
+              <li>
+                <FaNode className="tech-icon shining-effect" /> Node.js</li>
+              <li><FaHtml5 className="tech-icon shining-effect" /> HTML </li>
+              <li><FaCss3 className="tech-icon shining-effect" />CSS</li>
             </ul>
             <Text className="about-additional-text" variant="body2">
               Outside of work, I'm interested in following the developments of science. I also play a lot of video games. And make TikToks.

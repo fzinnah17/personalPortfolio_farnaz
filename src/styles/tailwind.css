@@ -250,7 +250,7 @@ body {
   background-color: blue;
   background-size: cover;
   background-position: center;
-  height: calc(60vh);
+  height: calc(70vh);
   padding-left: 45px;
   padding-right: 35px;
 }
@@ -326,6 +326,41 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(150px, 1fr));
 }
+
+.about-me-section .shining-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.about-me-section .shining-effect::before,
+.about-me-section .shining-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+
+.about-me-section .shining-effect::before {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: scaleY(0);
+}
+
+.about-me-section .shining-effect::after {
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: scaleX(0);
+}
+
+.about-me-section .shining-effect:hover::before,
+.about-me-section .shining-effect:hover::after {
+  transform: scaleY(1) scaleX(1);
+}
+
 
 .about-me-section .about-image {
   padding-left: 40px;
