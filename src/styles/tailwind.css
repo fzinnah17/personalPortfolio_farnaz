@@ -437,39 +437,53 @@ body {
   grid-template-columns: repeat(2, minmax(150px, 1fr));
 }
 
-.about-me-section .shining-effect {
+
+.about-me-section .tech-stack {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.about-me-section .tech-stack li {
+  display: flex;
+  align-items: center;
+  color: #252839;
+  -webkit-text-stroke: 0.3vw #383d52;
+  text-transform: uppercase;
+
+}
+
+.about-me-section .tech-stack li .tech-icon {
+  margin-right: 30px;
+}
+
+.about-me-section .tech-stack li .tech-text {
   position: relative;
-  display: inline-block;
+  color: #01fe87;
+  -webkit-text-stroke: 0vw #383d52;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+  white-space: nowrap;
+  /* Ensure the text appears in one line */
+
 }
 
-.about-me-section .shining-effect::before,
-.about-me-section .shining-effect::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s;
-  pointer-events: none;
+@keyframes animate {
+
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
 }
 
-.about-me-section .shining-effect::before {
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
-  transform: scaleY(0);
-}
 
-.about-me-section .shining-effect::after {
-  border-left: 2px solid #000;
-  border-right: 2px solid #000;
-  transform: scaleX(0);
-}
-
-.about-me-section .shining-effect:hover::before,
-.about-me-section .shining-effect:hover::after {
-  transform: scaleY(1) scaleX(1);
-}
 
 
 .about-me-section .about-image {

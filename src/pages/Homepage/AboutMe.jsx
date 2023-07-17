@@ -57,20 +57,50 @@ const AboutMe = () => {
               At the same time, I am undertaking a part-time <b>Master's of Science</b> in <b>Software Engineering</b> at{" "}
               <a href="https://www.ox.ac.uk/about">University of Oxford</a>.
             </Text>
+
             <ul className="tech-stack">
               <li>
-                <FaJsSquare className="tech-icon shining-effect" /> Javascript ES6+</li>
+                <FaJsSquare className="tech-icon" />
+                <span className="tech-text" data-text="Javascript ES6+">Javascript ES6+</span>
+              </li>
               <li>
-                <FaPython className="tech-icon shining-effect" /> Python</li>
+                <FaPython className="tech-icon" />
+                <span className="tech-text" data-text="Python">Python</span>
+              </li>
               <li>
-                <FaReact className="tech-icon shining-effect" /> React.js</li>
+                <FaReact className="tech-icon" />
+                <span className="tech-text" data-text="React.js">React.js</span>
+              </li>
               <li>
-                <FaJava className="tech-icon shining-effect" /> Java</li>
+                <FaJava className="tech-icon" />
+                <span className="tech-text" data-text="Java">Java</span>
+              </li>
               <li>
-                <FaNode className="tech-icon shining-effect" /> Node.js</li>
-              <li><FaHtml5 className="tech-icon shining-effect" /> HTML </li>
-              <li><FaCss3 className="tech-icon shining-effect" />CSS</li>
+                <FaNode className="tech-icon" />
+                <span className="tech-text" data-text="Node.js">Node.js</span>
+              </li>
+              <li>
+                <FaHtml5 className="tech-icon" />
+                <span className="tech-text" data-text="HTML">HTML</span>
+              </li>
+              <li>
+                <FaCss3 className="tech-icon" />
+                <span className="tech-text" data-text="CSS">CSS</span>
+              </li>
+              <li>
+                <FaCss3 className="tech-icon" />
+                <span className="tech-text" data-text="CSS">CSS</span>
+              </li>
+              <li>
+                <FaCss3 className="tech-icon" />
+                <span className="tech-text" data-text="CSS">CSS</span>
+              </li>
+              <li>
+                <FaCss3 className="tech-icon" />
+                <span className="tech-text" data-text="CSS">CSS</span>
+              </li>
             </ul>
+
             <Text className="about-additional-text" variant="body2">
               Outside of work, I'm interested in following the developments of science. I also play a lot of video games. And make TikToks.
             </Text>
