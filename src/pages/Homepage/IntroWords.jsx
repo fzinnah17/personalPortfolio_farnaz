@@ -42,10 +42,20 @@ const IntroWords = () => {
           </div>
         </div>
         <div className="intro-text">
-          <Text className="intro-heading">
-            Hello,
-            <span className="bold-text"> Jane</span> Here! 👋
-          </Text>
+
+          <div className="name-content">
+            <div className="namecontent__container">
+              <p className="namecontent__container__text">
+                Hello,
+              </p>
+              <ul className="namecontent__container__list">
+                <li className="namecontent__container__list__item">world !</li>
+                <li className="namecontent__container__list__item">fellows !</li>
+                <li className="namecontent__container__list__item">everyone !</li>
+                <li className="namecontent__container__list__item">recruiters !</li>
+              </ul>
+            </div>
+          </div>
 
           <div className="paragraph-container">
             <Text className="intro-description" variant="body2">
