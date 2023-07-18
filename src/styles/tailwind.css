@@ -245,6 +245,10 @@ body {
   background-color: #23D3FB;
 }
 
+.intro-section .name-highlight {
+  color: red;
+  font-weight: bolder;
+}
 
 .intro-section .name-content {
   overflow: hidden;
@@ -349,6 +353,13 @@ body {
   95.96% {
     transform: translate3d(0, -25%, 0);
   }
+}
+
+.intro-section .avatar {
+  display: inline-block;
+  width: 120px; /* Adjust the size as needed */
+  height: 120px; /* Adjust the size as needed */
+  margin-bottom: 25px;
 }
 
 
