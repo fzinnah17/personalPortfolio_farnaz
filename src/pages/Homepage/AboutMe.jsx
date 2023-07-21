@@ -1,37 +1,3 @@
-// import React from "react";
-// import { Text, Img } from "components";
-
-// const AboutMe = () => {
-//   return (
-//     <div className="about-me-container">
-//       <div className="about-me-content">
-//         <div className="about-me-image">
-//           <Img
-//             src="images/about_me_image.png"
-//             className="about-me-img"
-//             alt="About Me"
-//           />
-//         </div>
-//         <div className="about-me-details">
-//           <Text className="about-me-heading" as="h3" variant="h3">
-//             About Me
-//           </Text>
-//           <Text className="about-me-description" variant="body2">
-//             I am a passionate and dedicated professional with expertise in
-//             branding and product design. With a keen eye for detail and a
-//             creative mindset, I strive to deliver exceptional experiences for
-//             users. My skills in SEO optimization ensure that the digital
-//             presence of a brand is impactful and successful.
-//           </Text>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AboutMe;
-
-
 import React, { useState, useEffect } from "react";
 import { Text, Img } from "components";
 import { FaJsSquare, FaPython, FaReact, FaJava, FaNode, FaHtml5, FaCss3 } from "react-icons/fa";
@@ -41,27 +7,33 @@ const AboutMe = () => {
     const audio = new Audio("path/to/anti-hero-snippet.mp3");
     audio.play();
   };
-  
+  const experiences = [
+    { title: "Web Development Teaching Assistant", company: "CodePath", date: "Sep 2023 - Present" },
+    { title: "Software Engineering Intern", company: "Con Edison", date: "Dec 2022 - Present" },
+    { title: "Software Developer Intern", company: "The Difference", date: "Feb 2023 - April 2023" },
+    { title: "Software Engineering Fellow", company: "Headstarter", date: "June 2022 - Sep 2022" },
+    ];
+
   return (
     <div className="about-me-section">
       <div className="fade-in-section is-visible">
         <div className="section-header">
           <span className="pointer" onMouseOver={playAudio}>
             <span className="section-title">It's me, Hi!</span>
-            </span>
-            <div id="bars">
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-            </div>
-          
+          </span>
+          <div id="bars">
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+
         </div>
         <div className="about-content">
           <div className="about-description">
@@ -70,6 +42,60 @@ const AboutMe = () => {
               <a href="https://www.aboutamazon.com/">Amazon</a>, working in the AWS sector under team Route53.
               At the same time, I am undertaking a part-time <b>Master's of Science</b> in <b>Software Engineering</b> at{" "}
               <a href="https://www.ox.ac.uk/about">University of Oxford</a>.
+            </Text>
+
+            <div className="timeline">
+              <li className="timeline__items">
+                {experiences.map((experience, index) => (
+                  <li key={index} className="timeline__item">
+                    <div className="timeline__item-info">
+                      <span className="timeline__item-title">{experience.title}</span>
+                      <span className="timeline__item-company">{experience.company}</span>
+                      <span className="timeline__item-date">{experience.date}</span>
+                    </div>
+                  </li>
+                ))}
+              </li>
+            </div>
+
+{/* <div className="cd-horizontal-timeline">
+  <div className="timeline">
+    <div className="events-wrapper">
+      <div className="events">
+        <ol>
+          {experiences.map((experience, index) => (
+            <li key={index}>
+              <a href="#0" data-date={experience.date} className={index === 0 ? 'selected' : ''}>{experience.date}</a>
+            </li>
+          ))}
+        </ol>
+
+        <span className="filling-line" aria-hidden="true"></span>
+      </div>
+    </div>
+      
+    <ul className="cd-timeline-navigation">
+      <li><a href="#0" className="prev inactive">Prev</a></li>
+      <li><a href="#0" className="next">Next</a></li>
+    </ul>
+  </div>
+
+  <div className="events-content">
+    <ol>
+      {experiences.map((experience, index) => (
+        <li key={index} className={index === 0 ? 'selected' : ''} data-date={experience.date}>
+          <h2 className="timeline-title">{experience.title}</h2>
+          <em className="timeline-time">{experience.date}</em>
+          <p className="timeline-text">{experience.company}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</div> */}
+
+
+            <Text>
+              I love working with:
             </Text>
 
             <ul className="tech-stack">
