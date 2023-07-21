@@ -508,6 +508,91 @@ li:hover {
   opacity: 1;
 }
 
+.about-me-section #bars {
+  height: 40px;
+  margin-top: 15px;
+  margin-left: 25px;
+  position: relative;
+}
+
+.about-me-section .bar {
+  background: linear-gradient(90deg, #ff3838, #ff4d4d, #ff7373, #ff9999, #ffbfbf, #ffd6d6, #ffecec, #ffffff, #ffffff, #ffffff, #ffffff);
+  bottom: 1px;
+  height: 3px;
+  position: absolute;
+  width: 3px;
+  animation: sound 10000ms -800ms linear infinite alternate;
+}
+
+@keyframes sound {
+  0% {
+    opacity: 0.35;
+    height: 3px;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 1;
+    height: 28px;
+    transform: scaleX(1.5);
+  }
+  100% {
+    opacity: 0.35;
+    height: 3px;
+    transform: scaleX(1);
+  }
+}
+
+.about-me-section .bar:nth-child(1) {
+  left: 1px;
+  animation-duration: 474ms;
+}
+
+.about-me-section .bar:nth-child(2) {
+  left: 5px;
+  animation-duration: 433ms;
+}
+
+.about-me-section .bar:nth-child(3) {
+  left: 9px;
+  animation-duration: 407ms;
+}
+
+.about-me-section .bar:nth-child(4) {
+  left: 13px;
+  animation-duration: 458ms;
+}
+
+.about-me-section .bar:nth-child(5) {
+  left: 17px;
+  animation-duration: 400ms;
+}
+
+.about-me-section .bar:nth-child(6) {
+  left: 21px;
+  animation-duration: 427ms;
+}
+
+.about-me-section .bar:nth-child(7) {
+  left: 25px;
+  animation-duration: 441ms;
+}
+
+.about-me-section .bar:nth-child(8) {
+  left: 29px;
+  animation-duration: 419ms;
+}
+
+.about-me-section .bar:nth-child(9) {
+  left: 33px;
+  animation-duration: 487ms;
+}
+
+.about-me-section .bar:nth-child(10) {
+  left: 37px;
+  animation-duration: 442ms;
+}
+
+
 
 .about-me-section .about-content {
   display: flex;
@@ -561,11 +646,11 @@ li:hover {
   color: #01fe87;
   -webkit-text-stroke: 0vw #383d52;
   overflow: hidden;
-  animation: animate 6s linear infinite;
+  animation: animate 8s linear 7;
   white-space: nowrap;
-  /* Ensure the text appears in one line */
 
 }
+
 
 @keyframes animate {
 
@@ -578,6 +663,7 @@ li:hover {
   70%,
   90% {
     width: 100%;
+    
   }
 }
 

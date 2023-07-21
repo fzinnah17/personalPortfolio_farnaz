@@ -32,7 +32,7 @@
 // export default AboutMe;
 
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Text, Img } from "components";
 import { FaJsSquare, FaPython, FaReact, FaJava, FaNode, FaHtml5, FaCss3 } from "react-icons/fa";
 
@@ -41,13 +41,27 @@ const AboutMe = () => {
     const audio = new Audio("path/to/anti-hero-snippet.mp3");
     audio.play();
   };
+  
   return (
     <div className="about-me-section">
       <div className="fade-in-section is-visible">
         <div className="section-header">
           <span className="pointer" onMouseOver={playAudio}>
             <span className="section-title">It's me, Hi!</span>
-          </span>
+            </span>
+            <div id="bars">
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+            </div>
+          
         </div>
         <div className="about-content">
           <div className="about-description">
