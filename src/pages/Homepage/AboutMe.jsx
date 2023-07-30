@@ -1,18 +1,55 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Text, Img } from "components";
 import { FaJsSquare, FaPython, FaReact, FaJava, FaNode, FaHtml5, FaCss3 } from "react-icons/fa";
+import HorizontalTimeline from './HorizontalTimeline';
 
 const AboutMe = () => {
+  // state variable counter and its setter
+  const [counter, setCounter] = useState(0);
+  // increment counter for next button
+  const increment = () => {
+    // Only increment the counter if it's less than the length of experiences array minus 1
+    if (counter < experiences.length - 1) {
+      setCounter(counter + 1);
+      console.log('Increment called, new counter value:', counter);
+
+    }
+  };
+  //decrement counter for prev button to not go out of bounds
+  const decrement = () => {
+    // Only decrement the counter if it's more than 0
+    if (counter > 0) {
+      setCounter(counter - 1);
+      console.log('Decrement called, new counter value:', counter);
+    }
+  };
   const playAudio = () => {
     const audio = new Audio("path/to/anti-hero-snippet.mp3");
     audio.play();
   };
+
   const experiences = [
-    { title: "Web Development Teaching Assistant", company: "CodePath", date: "Sep 2023 - Present" },
-    { title: "Software Engineering Intern", company: "Con Edison", date: "Dec 2022 - Present" },
-    { title: "Software Developer Intern", company: "The Difference", date: "Feb 2023 - April 2023" },
-    { title: "Software Engineering Fellow", company: "Headstarter", date: "June 2022 - Sep 2022" },
-    ];
+    {
+      date: "01/09/2023 - Present", // CodePath: Sep 2023 - Present
+      title: "Web Development Teaching Assistant",
+      company: "CodePath",
+    },
+    {
+      date: "01/12/2022 - Present", // Con Edison: Dec 2022 - Present
+      title: "Software Engineering Intern",
+      company: "Con Edison",
+    },
+    {
+      date: "01/04/2023 - 01/06/2023", // The Difference: Feb 2023 - Apr 2023
+      title: "Software Developer Intern",
+      company: "The Difference",
+    },
+    {
+      date: "01/06/2022 - 01/09/2022", // Headstarter: May 2022 - Sep 2022
+      title: "Software Engineering Fellow",
+      company: "Headstarter",
+    },
+  ];
 
   return (
     <div className="about-me-section">
@@ -44,59 +81,12 @@ const AboutMe = () => {
               <a href="https://www.ox.ac.uk/about">University of Oxford</a>.
             </Text>
 
-            <div className="timeline">
-              <li className="timeline__items">
-                {experiences.map((experience, index) => (
-                  <li key={index} className="timeline__item">
-                    <div className="timeline__item-info">
-                      <span className="timeline__item-title">{experience.title}</span>
-                      <span className="timeline__item-company">{experience.company}</span>
-                      <span className="timeline__item-date">{experience.date}</span>
-                    </div>
-                  </li>
-                ))}
-              </li>
+            <HorizontalTimeline experiences={experiences} counter={counter} increment={increment} decrement={decrement} />
+            <div className="lovetech-section">
+              <Text>
+                I love working with:
+              </Text>
             </div>
-
-{/* <div className="cd-horizontal-timeline">
-  <div className="timeline">
-    <div className="events-wrapper">
-      <div className="events">
-        <ol>
-          {experiences.map((experience, index) => (
-            <li key={index}>
-              <a href="#0" data-date={experience.date} className={index === 0 ? 'selected' : ''}>{experience.date}</a>
-            </li>
-          ))}
-        </ol>
-
-        <span className="filling-line" aria-hidden="true"></span>
-      </div>
-    </div>
-      
-    <ul className="cd-timeline-navigation">
-      <li><a href="#0" className="prev inactive">Prev</a></li>
-      <li><a href="#0" className="next">Next</a></li>
-    </ul>
-  </div>
-
-  <div className="events-content">
-    <ol>
-      {experiences.map((experience, index) => (
-        <li key={index} className={index === 0 ? 'selected' : ''} data-date={experience.date}>
-          <h2 className="timeline-title">{experience.title}</h2>
-          <em className="timeline-time">{experience.date}</em>
-          <p className="timeline-text">{experience.company}</p>
-        </li>
-      ))}
-    </ol>
-  </div>
-</div> */}
-
-
-            <Text>
-              I love working with:
-            </Text>
 
             <ul className="tech-stack">
               <li>
@@ -144,6 +134,7 @@ const AboutMe = () => {
             <Text className="about-additional-text" variant="body2">
               Outside of work, I'm interested in following the developments of science. I also play a lot of video games. And make TikToks.
             </Text>
+
           </div>
           <div className="about-image">
             <Img
