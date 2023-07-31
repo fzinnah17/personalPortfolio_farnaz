@@ -1,10 +1,7 @@
-/* .cd-horizontal-timeline {
-  width: 90%;
-  max-width: 800px;
-  margin: 2em auto;
-  position: relative;
-} */
-
+.timeline::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 .timeline {
   position: relative;
   width: 100%;
@@ -47,6 +44,8 @@
   transition: transform 0.3s;
 }
 
+/* ... previous CSS rules ... */
+
 .timeline .events a {
   position: absolute;
   bottom: 0;
@@ -59,7 +58,7 @@
 }
 
 .timeline .events a::after {
-  /*circle marker*/
+  /* circle marker */
   content: '';
   position: absolute;
   left: 50%;
@@ -71,23 +70,23 @@
   background-color: white;
   border: 2px solid #30353C;
   border-radius: 50%;
+
+  /* Hide the circle marker by default */
+  opacity: 0;
+  transform: scale(0);
 }
 
 .timeline .events a.selected {
-  /*selected event*/
+  /* selected event */
   opacity: 1;
-}
 
-.timeline .events a.selected::after {
-  /*circle marker*/
-  bottom: calc(60% + 10px);
-  background-color: #F1C40F;
-  opacity: 1;
-}
-
-.timeline .events a.older-event::after {
-  /*circle marker - older event*/
-  border-color: #7E8C8D;
+  /* Show the circle marker after it's selected */
+  &::after {
+    bottom: calc(60% + 10px);
+    background-color: #F1C40F;
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .cd-timeline-navigation {
@@ -174,7 +173,7 @@
 }
 
 .timeline-time {
-  font-size: 1.3em;
+  font-size: 1.0em;
   color: #F1C40F;
   margin-bottom: 1em;
 }

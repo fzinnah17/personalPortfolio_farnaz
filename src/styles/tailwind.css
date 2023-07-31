@@ -458,7 +458,7 @@ li:hover {
   background-color: blue;
   background-size: cover;
   background-position: center;
-  height: calc(70vh);
+  height: calc(100vh);
   padding-left: 45px;
   padding-right: 35px;
 }
@@ -621,13 +621,14 @@ li:hover {
 }
 
 .about-me-section .lovetech-section{
-  margin-top: 60px;
+  margin-top: 150px;
 }
 
 .about-me-section .tech-stack {
   list-style: none;
   padding: 0;
-  margin-top: 70px;
+  margin-top: 5px;
+  margin-bottom: 15px;
   display: flex;
 }
 

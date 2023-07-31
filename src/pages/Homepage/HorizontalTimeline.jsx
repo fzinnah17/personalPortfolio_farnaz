@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
+// import { BiLeftArrow, BiRightArrow } from "react-icons/fa";
+
 import "./HorizontalTimeline.css";
 
 const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
-  const [eventsMinDistance, setEventsMinDistance] = useState(190);
+  const [eventsMinDistance, setEventsMinDistance] = useState(220);
   const eventsWrapperRef = useRef(null);
   const eventsContentRef = useRef(null);
   // const experiences = props.experiences;
@@ -256,14 +258,14 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
     // Then we take the start date (at index 0) and split it by "/"
     // This gives us an array of [day, month, year]
     const [day, month, year] = date.split(' - ')[0].split('/');
-    
+
     // Then, we rearrange the day, month, and year to be in the format year/month/day
     const formattedDate = `${year}/${month}/${day}`;
-  
+
     // The formattedDate is then returned by the function
     return formattedDate;
   }
-  
+
 
 
   return (
@@ -287,7 +289,7 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
 
         <ul className="cd-timeline-navigation">
           <li><a href="#0" className={counter === 0 ? "prev inactive" : "prev"} onClick={decrement} disabled={counter === 0}>Prev</a></li>
-          <li><a href="#0" className={counter === experiences.length - 1 ? "next inactive" : "next"} onClick={increment} disabled = {counter === experiences.length - 1}>Next</a></li>
+          <li><a href="#0" className={counter === experiences.length - 1 ? "next inactive" : "next"} onClick={increment} disabled={counter === experiences.length - 1}>Next</a></li>
         </ul>
       </div>
 
