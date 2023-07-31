@@ -1,9 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Text, Img } from "components";
 import { FaJsSquare, FaPython, FaReact, FaJava, FaNode, FaHtml5, FaCss3 } from "react-icons/fa";
 import HorizontalTimeline from './HorizontalTimeline';
 
-const AboutMe = () => {
+const AboutMe = ({ showScrollReveal }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutMeSection = document.querySelector(".about-me-section");
+
+      if (aboutMeSection) {
+        const aboutMeTop = aboutMeSection.getBoundingClientRect().top;
+        setIsVisible(aboutMeTop <= window.innerHeight * 0.75);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // state variable counter and its setter
   const [counter, setCounter] = useState(0);
   // increment counter for next button
@@ -52,7 +69,7 @@ const AboutMe = () => {
   ];
 
   return (
-    <div className="about-me-section">
+    <div className={`about-me-section ${isVisible ? 'fade-in-section is-visible' : 'fade-in-section'}`}>
       <div className="fade-in-section is-visible">
         <div className="section-header">
           <span className="pointer" onMouseOver={playAudio}>
