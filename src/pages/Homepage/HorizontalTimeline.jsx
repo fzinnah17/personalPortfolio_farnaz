@@ -288,21 +288,57 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
         </div>
 
         <ul className="cd-timeline-navigation">
-          <li><a href="#0" className={counter === 0 ? "prev inactive" : "prev"} onClick={decrement} disabled={counter === 0}>Prev</a></li>
-          <li><a href="#0" className={counter === experiences.length - 1 ? "next inactive" : "next"} onClick={increment} disabled={counter === experiences.length - 1}>Next</a></li>
+          <li><a className={`prev ${counter === 0 ? 'inactive' : ''}`} onClick={decrement}>Prev</a>
+          </li>
+          <li>
+            <a className={`next ${counter === experiences.length - 1 ? 'inactive' : ''}`} onClick={increment}>Next</a>
+          </li>
         </ul>
       </div>
 
       <div className="events-content" ref={eventsContentRef}>
-        <ol>
+        {/* <ol>
           {experiences.map((experience, index) => (
             <li key={index} className={index === 0 ? 'selected' : ''} data-date={experience.date}>
-              <h1 className="timeline-title">{experience.title}</h1>
+              <div className="title-company-container">
+                <h1 className="timeline-title">{experience.title}</h1>
+                <p className="timeline-text"> @ {experience.company}</p>
+              </div>
               <em className="timeline-time">{experience.date}</em>
-              <p className="timeline-text">{experience.company}</p>
+              {experience.description && (
+                <ul className="experience-description">
+                  {experience.description.map((desc, i) => (
+                    <li key={i}>{desc}</li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
-        </ol>
+
+        </ol> */}
+              <ol>
+        {experiences.map((experience, index) => (
+          <li key={index} className={index === counter ? 'selected' : ''} data-date={experience.date}>
+            {/* Display only if this experience is selected */}
+            {index === counter && (
+              <>
+                <div className="title-company-container">
+                  <h1 className="timeline-title">{experience.title}</h1>
+                  <p className="timeline-text"> @ {experience.company}</p>
+                </div>
+                <em className="timeline-time">{experience.date}</em>
+                {experience.description && (
+                  <ul className="experience-description">
+                    {experience.description.map((desc, i) => (
+                      <li key={i}>{desc}</li>
+                    ))}
+                  </ul>
+                )}
+              </>
+            )}
+          </li>
+        ))}
+      </ol>
       </div>
     </section>
   );

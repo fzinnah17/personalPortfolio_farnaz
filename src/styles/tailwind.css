@@ -767,12 +767,11 @@ li:hover {
 }
 
 
-.experience-section {
+/* .experience-section {
   background-color: purple;
   background-size: cover;
   background-position: center;
-  /* Additional styling for the experience section */
-}
+} */
 
 .projects-section {
   background-color: orange;

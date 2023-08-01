@@ -36,6 +36,7 @@
 
 .timeline .filling-line {
   /*colored line showing the progress on the timeline*/
+  width: calc((100% / (4 - 1)) * counter);
   position: absolute;
   top: calc(50% - 2px);
   height: 4px;
@@ -43,8 +44,6 @@
   will-change: transform;
   transition: transform 0.3s;
 }
-
-/* ... previous CSS rules ... */
 
 .timeline .events a {
   position: absolute;
@@ -131,30 +130,22 @@
   padding: 0 1em;
 }
 
-.events-content li {
+.events-content > li {
   position: absolute;
   color: transparent;
   display: none;
 }
 
-.events-content li.selected {
+.events-content > li.selected {
   color: #30353C;
   display: block;
+  position: relative;
+
 }
+
 
 .events-content li.selected::after{
   margin-top: 2em;
-}
-
-.events-content li::before {
-  /*triangle marker*/
-  content: '';
-  position: absolute;
-  left: 22px;
-  bottom: calc(100% + 1px);
-  display: inline-block;
-  border-top: 7px solid #F1C40F;
-  border-right: 7px solid transparent;
 }
 
 .events-content li.enter-right,
@@ -167,9 +158,20 @@
   animation: cd-timeline-rotate-left 0.5s;
 }
 
+.title-company-container {
+  display: flex;
+  align-items: baseline;
+}
+
+
 .timeline-title {
   font-weight: bold;
   margin-bottom: .5em;
+  margin-right: 10px;
+}
+.timeline-text {
+  margin-left: 10px;
+  color: black;
 }
 
 .timeline-time {
@@ -177,6 +179,19 @@
   color: #F1C40F;
   margin-bottom: 1em;
 }
+
+/* .experience-description {
+  margin-top: 20px;
+  color: black;
+}
+
+.experience-description ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: white;
+  font-size: larger;
+} */
+
 
 @keyframes cd-timeline-rotate-right {
   0% {
