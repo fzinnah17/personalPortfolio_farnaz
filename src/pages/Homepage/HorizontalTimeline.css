@@ -180,17 +180,28 @@
   margin-bottom: 1em;
 }
 
-/* .experience-description {
-  margin-top: 20px;
-  color: black;
+.arrow-icon {
+  position: absolute;
+  left: 0;
 }
+
+
+.experience-description {
+  position: relative;
+}
+
+.experience-description.new-class {
+  display: block;
+  grid-template-columns: none;
+}
+
 
 .experience-description ul li {
   list-style-type: disc;
   margin-left: 20px;
   color: white;
   font-size: larger;
-} */
+}
 
 
 @keyframes cd-timeline-rotate-right {

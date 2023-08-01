@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 // import { BiLeftArrow, BiRightArrow } from "react-icons/fa";
-
+import { MdOutlineDoubleArrow } from "react-icons/md";
 import "./HorizontalTimeline.css";
 
 const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
@@ -297,48 +297,28 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
       </div>
 
       <div className="events-content" ref={eventsContentRef}>
-        {/* <ol>
+        <ol>
           {experiences.map((experience, index) => (
-            <li key={index} className={index === 0 ? 'selected' : ''} data-date={experience.date}>
-              <div className="title-company-container">
-                <h1 className="timeline-title">{experience.title}</h1>
-                <p className="timeline-text"> @ {experience.company}</p>
-              </div>
-              <em className="timeline-time">{experience.date}</em>
-              {experience.description && (
-                <ul className="experience-description">
-                  {experience.description.map((desc, i) => (
-                    <li key={i}>{desc}</li>
-                  ))}
-                </ul>
+            <li key={index} className={index === counter ? 'selected' : ''} data-date={experience.date}>
+              {index === counter && (
+                <>
+                  <div className="title-company-container">
+                    <h1 className="timeline-title">{experience.title}</h1>
+                    <p className="timeline-text"> @ {experience.company}</p>
+                  </div>
+                  <em className="timeline-time">{experience.date}</em>
+                  {experience.description && (
+                    <ul className="experience-description new-class">
+                      {experience.description.map((desc, i) => (
+                        <li key={i}><MdOutlineDoubleArrow className="arrow-icon" /> {desc}</li>
+                      ))}
+                    </ul>
+                  )}
+                </>
               )}
             </li>
           ))}
-
-        </ol> */}
-              <ol>
-        {experiences.map((experience, index) => (
-          <li key={index} className={index === counter ? 'selected' : ''} data-date={experience.date}>
-            {/* Display only if this experience is selected */}
-            {index === counter && (
-              <>
-                <div className="title-company-container">
-                  <h1 className="timeline-title">{experience.title}</h1>
-                  <p className="timeline-text"> @ {experience.company}</p>
-                </div>
-                <em className="timeline-time">{experience.date}</em>
-                {experience.description && (
-                  <ul className="experience-description">
-                    {experience.description.map((desc, i) => (
-                      <li key={i}>{desc}</li>
-                    ))}
-                  </ul>
-                )}
-              </>
-            )}
-          </li>
-        ))}
-      </ol>
+        </ol>
       </div>
     </section>
   );
