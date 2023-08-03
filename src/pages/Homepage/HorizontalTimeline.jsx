@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-// import { BiLeftArrow, BiRightArrow } from "react-icons/fa";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import "./HorizontalTimeline.css";
 
@@ -7,10 +6,6 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
   const [eventsMinDistance, setEventsMinDistance] = useState(220);
   const eventsWrapperRef = useRef(null);
   const eventsContentRef = useRef(null);
-  // const experiences = props.experiences;
-  // const counter = props.counter;
-  // const increment = props.increment;
-  // const decrement = props.decrement;
   const [selectedExperience, setSelectedExperience] = useState(experiences[0]);
 
 
@@ -130,47 +125,6 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
     setTransformValue(filling, "scaleX", scaleValue);
   }
 
-  // Function to update the visible content (when clicking on a timeline event)
-  // function updateVisibleContent(event, eventsContent) {
-  //   const eventDate = event.getAttribute("data-date");
-  //   const visibleContent = eventsContent.querySelector(".selected");
-  //   const selectedContent = eventsContent.querySelector(`[data-date="${eventDate}"]`);
-  //   const selectedContentHeight = selectedContent.offsetHeight;
-
-  //   if (!selectedContent || !visibleContent) {
-  //     console.error("Either selectedContent or visibleContent could not be found. Aborting updateVisibleContent.");
-  //     return;
-  //   }
-
-  //   if (selectedContent.compareDocumentPosition(visibleContent) & Node.DOCUMENT_POSITION_PRECEDING) {
-  //     selectedContent.className = "selected enter-right";
-  //     visibleContent.className = "leave-left";
-  //   } else {
-  //     selectedContent.className = "selected enter-left";
-  //     visibleContent.className = "leave-right";
-  //   }
-
-  //   setTimeout(() => {
-  //     visibleContent.className = "";
-  //     selectedContent.className = "selected";
-  //     eventsContent.style.height = selectedContentHeight + "px";
-  //   }, 300); // Animation duration
-  // }
-
-  // // Function to update the older events' styles
-  // function updateOlderEvents(event) {
-  //   const closestLi = event.closest("li");
-  //   if (!closestLi) return; // Return early if the clicked event does not have an <li> ancestor
-
-  //   closestLi.previousElementSibling?.querySelectorAll("a").forEach((olderEvent) => {
-  //     olderEvent.classList.add("older-event");
-  //   });
-  //   closestLi.nextElementSibling?.querySelectorAll("a").forEach((olderEvent) => {
-  //     olderEvent.classList.remove("older-event");
-  //   });
-  // }
-
-
   // Function to get the translateX value of an element
   function getTranslateValue(element) {
     const timelineStyle = window.getComputedStyle(element);
@@ -232,20 +186,6 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
       }
     });
 
-    // timelineComponents.eventsWrapper.addEventListener("click", (event) => {
-    //   event.preventDefault();
-    //   const target = event.target;
-    //   if (target.tagName === "A") {
-    //     timelineComponents.timelineEvents.forEach((eventElement) => {
-    //       eventElement.classList.remove("selected");
-    //     });
-    //     target.classList.add("selected");
-    //     updateOlderEvents(target);
-    //     updateFilling(target, timelineComponents.fillingLine, timelineTotWidth);
-    //     updateVisibleContent(target, eventsContent);
-    //   }
-    // });
-
     return timelineComponents;
   }
 
@@ -272,7 +212,7 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
             <ol>
               {experiences.map((experience, index) => (
                 <li key={index}>
-                  <a href="#0" data-date={experience.date} className={index === 0 ? 'selected' : ''} onClick={() => setSelectedExperience(experience)}>
+                  <a href="#0" data-date={experience.date} className={experience.date === selectedExperience.date ? 'selected' : ''} onClick={() => setSelectedExperience(experience)}>
                     {new Date(formatDate(experience.date)).getFullYear()} - {experience.company}
                   </a>
                 </li>
@@ -293,28 +233,6 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
       </div>
 
       <div className="events-content" ref={eventsContentRef}>
-        {/* <ol>
-          {experiences.map((experience, index) => (
-            <li key={index} className={index === counter ? 'selected' : ''} data-date={experience.date}>
-              {index === counter && (
-                <>
-                  <div className="title-company-container">
-                    <h1 className="timeline-title">{experience.title}</h1>
-                    <p className="timeline-text"> @ {experience.company}</p>
-                  </div>
-                  <em className="timeline-time">{experience.date}</em>
-                  {experience.description && (
-                    <ul className="experience-description new-class">
-                      {experience.description.map((desc, i) => (
-                        <li key={i}><MdOutlineDoubleArrow className="arrow-icon" /> {desc}</li>
-                      ))}
-                    </ul>
-                  )}
-                </>
-              )}
-            </li>
-          ))}
-        </ol> */}
         <ol>
           <li className='selected' data-date={selectedExperience.date}>
             <div className="title-company-container">
