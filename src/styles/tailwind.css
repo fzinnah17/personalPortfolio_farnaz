@@ -621,10 +621,11 @@ li:hover {
 
 
 .about-me-section .lovetech-section{
-  margin-top: 150px;
+  margin-top: 30px;
 }
 
 .about-me-section .about-description .tech-stack {
+  margin-top: 10px;
   padding-top: 20px;
   list-style-type: none;
   display: grid; 

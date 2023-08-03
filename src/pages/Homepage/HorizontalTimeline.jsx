@@ -11,6 +11,8 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
   // const counter = props.counter;
   // const increment = props.increment;
   // const decrement = props.decrement;
+  const [selectedExperience, setSelectedExperience] = useState(experiences[0]);
+
 
 
   useEffect(() => {
@@ -129,50 +131,44 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
   }
 
   // Function to update the visible content (when clicking on a timeline event)
-  function updateVisibleContent(event, eventsContent) {
-    const eventDate = event.getAttribute("data-date");
-    const visibleContent = eventsContent.querySelector(".selected");
-    const selectedContent = eventsContent.querySelector(`[data-date="${eventDate}"]`);
-    const selectedContentHeight = selectedContent.offsetHeight;
+  // function updateVisibleContent(event, eventsContent) {
+  //   const eventDate = event.getAttribute("data-date");
+  //   const visibleContent = eventsContent.querySelector(".selected");
+  //   const selectedContent = eventsContent.querySelector(`[data-date="${eventDate}"]`);
+  //   const selectedContentHeight = selectedContent.offsetHeight;
 
-    if (!selectedContent || !visibleContent) {
-      console.error("Either selectedContent or visibleContent could not be found. Aborting updateVisibleContent.");
-      return;
-    }
+  //   if (!selectedContent || !visibleContent) {
+  //     console.error("Either selectedContent or visibleContent could not be found. Aborting updateVisibleContent.");
+  //     return;
+  //   }
 
-    if (selectedContent.compareDocumentPosition(visibleContent) & Node.DOCUMENT_POSITION_PRECEDING) {
-      selectedContent.className = "selected enter-right";
-      visibleContent.className = "leave-left";
-    } else {
-      selectedContent.className = "selected enter-left";
-      visibleContent.className = "leave-right";
-    }
-    console.log(visibleContent); // Should log a DOM node, else null
-    console.log(selectedContent); // Should log a DOM node, else null
-    console.log(event); // Should log a DOM node
-    console.log(event.getAttribute("data-date")); // Should log a date string
+  //   if (selectedContent.compareDocumentPosition(visibleContent) & Node.DOCUMENT_POSITION_PRECEDING) {
+  //     selectedContent.className = "selected enter-right";
+  //     visibleContent.className = "leave-left";
+  //   } else {
+  //     selectedContent.className = "selected enter-left";
+  //     visibleContent.className = "leave-right";
+  //   }
 
+  //   setTimeout(() => {
+  //     visibleContent.className = "";
+  //     selectedContent.className = "selected";
+  //     eventsContent.style.height = selectedContentHeight + "px";
+  //   }, 300); // Animation duration
+  // }
 
+  // // Function to update the older events' styles
+  // function updateOlderEvents(event) {
+  //   const closestLi = event.closest("li");
+  //   if (!closestLi) return; // Return early if the clicked event does not have an <li> ancestor
 
-    setTimeout(() => {
-      visibleContent.className = "";
-      selectedContent.className = "selected";
-      eventsContent.style.height = selectedContentHeight + "px";
-    }, 300); // Animation duration
-  }
-
-  // Function to update the older events' styles
-  function updateOlderEvents(event) {
-    const closestLi = event.closest("li");
-    if (!closestLi) return; // Return early if the clicked event does not have an <li> ancestor
-
-    closestLi.previousElementSibling?.querySelectorAll("a").forEach((olderEvent) => {
-      olderEvent.classList.add("older-event");
-    });
-    closestLi.nextElementSibling?.querySelectorAll("a").forEach((olderEvent) => {
-      olderEvent.classList.remove("older-event");
-    });
-  }
+  //   closestLi.previousElementSibling?.querySelectorAll("a").forEach((olderEvent) => {
+  //     olderEvent.classList.add("older-event");
+  //   });
+  //   closestLi.nextElementSibling?.querySelectorAll("a").forEach((olderEvent) => {
+  //     olderEvent.classList.remove("older-event");
+  //   });
+  // }
 
 
   // Function to get the translateX value of an element
@@ -236,19 +232,19 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
       }
     });
 
-    timelineComponents.eventsWrapper.addEventListener("click", (event) => {
-      event.preventDefault();
-      const target = event.target;
-      if (target.tagName === "A") {
-        timelineComponents.timelineEvents.forEach((eventElement) => {
-          eventElement.classList.remove("selected");
-        });
-        target.classList.add("selected");
-        updateOlderEvents(target);
-        updateFilling(target, timelineComponents.fillingLine, timelineTotWidth);
-        updateVisibleContent(target, eventsContent);
-      }
-    });
+    // timelineComponents.eventsWrapper.addEventListener("click", (event) => {
+    //   event.preventDefault();
+    //   const target = event.target;
+    //   if (target.tagName === "A") {
+    //     timelineComponents.timelineEvents.forEach((eventElement) => {
+    //       eventElement.classList.remove("selected");
+    //     });
+    //     target.classList.add("selected");
+    //     updateOlderEvents(target);
+    //     updateFilling(target, timelineComponents.fillingLine, timelineTotWidth);
+    //     updateVisibleContent(target, eventsContent);
+    //   }
+    // });
 
     return timelineComponents;
   }
@@ -276,7 +272,7 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
             <ol>
               {experiences.map((experience, index) => (
                 <li key={index}>
-                  <a href="#0" data-date={experience.date} className={index === 0 ? 'selected' : ''}>
+                  <a href="#0" data-date={experience.date} className={index === 0 ? 'selected' : ''} onClick={() => setSelectedExperience(experience)}>
                     {new Date(formatDate(experience.date)).getFullYear()} - {experience.company}
                   </a>
                 </li>
@@ -297,7 +293,7 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
       </div>
 
       <div className="events-content" ref={eventsContentRef}>
-        <ol>
+        {/* <ol>
           {experiences.map((experience, index) => (
             <li key={index} className={index === counter ? 'selected' : ''} data-date={experience.date}>
               {index === counter && (
@@ -318,6 +314,22 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
               )}
             </li>
           ))}
+        </ol> */}
+        <ol>
+          <li className='selected' data-date={selectedExperience.date}>
+            <div className="title-company-container">
+              <h1 className="timeline-title">{selectedExperience.title}</h1>
+              <p className="timeline-text"> @ {selectedExperience.company}</p>
+            </div>
+            <em className="timeline-time">{selectedExperience.date}</em>
+            {selectedExperience.description && (
+              <ul className="experience-description new-class">
+                {selectedExperience.description.map((desc, i) => (
+                  <li key={i}><MdOutlineDoubleArrow className="arrow-icon" /> {desc}</li>
+                ))}
+              </ul>
+            )}
+          </li>
         </ol>
       </div>
     </section>

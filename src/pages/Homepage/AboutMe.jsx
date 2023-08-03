@@ -72,7 +72,7 @@ const AboutMe = () => {
       ],
     },
     {
-      date: "01/04/2023 - 01/06/2023", // The Difference: Feb 2023 - Apr 2023
+      date: "01/02/2023 - 01/04/2023", // The Difference: Feb 2023 - Apr 2023
       title: "Software Developer Intern",
       company: "The Difference",
       description: [
