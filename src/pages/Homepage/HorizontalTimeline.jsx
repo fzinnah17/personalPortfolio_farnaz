@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback, useMemo } from "react";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import "./HorizontalTimeline.css";
 
@@ -7,8 +7,6 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
   const eventsWrapperRef = useRef(null);
   const eventsContentRef = useRef(null);
   const [selectedExperience, setSelectedExperience] = useState(experiences[0]);
-
-
 
   useEffect(() => {
     const eventsWrapper = eventsWrapperRef.current;
@@ -43,7 +41,7 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
     return Math.min.apply(null, dateDistances);
   }
 
-  function updateNavigation(timelineComponents, translateValue, totWidth) {
+  const updateNavigation = useCallback((timelineComponents, translateValue, totWidth) => {
     const wrapper = timelineComponents.eventsWrapper;
     const style = wrapper.style;
     const navigation = timelineComponents.timelineNavigation;
@@ -60,7 +58,19 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
       navigationNext.classList.add("active");
     }
     setTransformValue(navigation, "translateX", translateValue);
-  }
+  }, []);
+
+  const timelineComponents = useMemo(() => {
+    const timelineBlocks = document.getElementsByClassName('cd-timeline__block');
+    const timelineDates = document.getElementsByClassName('cd-timeline__date');
+    const timelineContents = document.getElementsByClassName('cd-timeline__content');
+
+    return {
+      timelineBlocks,
+      timelineDates,
+      timelineContents
+    };
+  }, []);
 
   function translateTimeline(timelineComponents, value, totWidth) {
     const wrapper = timelineComponents.eventsWrapper;
@@ -71,6 +81,7 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
     // Update navigation arrows
     updateNavigation(timelineComponents, value, totWidth);
   }
+
 
   // Function to assign a left position to the single events along the timeline
   function setDatePosition(timelineComponents) {
@@ -201,8 +212,6 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
     // The formattedDate is then returned by the function
     return formattedDate;
   }
-
-
 
   return (
     <section className="cd-horizontal-timeline">
