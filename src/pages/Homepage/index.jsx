@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 import AboutMe from "./AboutMe";
 import Experience from "./Experience";
 import Projects from "./Projects";
+import ParallaxSection from "./ParallaxSection";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -64,21 +65,12 @@ const HomePage = () => {
           <img src="/images/fz-low-resolution-color-logo-transparent.png" alt="Logo" className="logo" />
         </div>
       )}
-      {/* 
-      <div className="bg-white_A700 flex flex-col font-sourcesanspro gap-[54px] items-center justify-start mx-[auto] w-[100%]">
-        <div className="flex flex-col items-start justify-start w-[100%]">
-          <IntroWords />
-          <Sidebar />
-          <AboutMe />
-          <Experience />
-          <Projects />
-        </div>
-      </div> */}
-
+      
       <div className="intro-section">
         <IntroWords />
       </div>
       <Sidebar />
+      {/* <ParallaxSection /> */}
       <div className="about-me-section">
         <AboutMe />
       </div>
