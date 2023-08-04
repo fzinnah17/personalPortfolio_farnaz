@@ -241,11 +241,11 @@ const HorizontalTimeline = ({ experiences, counter, increment, decrement }) => {
             </div>
             <em className="timeline-time">{selectedExperience.date}</em>
             {selectedExperience.description && (
-              <ul className="experience-description new-class">
+              <li className="experience-description">
                 {selectedExperience.description.map((desc, i) => (
                   <li key={i}><MdOutlineDoubleArrow className="arrow-icon" /> {desc}</li>
                 ))}
-              </ul>
+              </li>
             )}
           </li>
         </ol>

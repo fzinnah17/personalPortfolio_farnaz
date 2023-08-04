@@ -189,11 +189,7 @@
 
 .experience-description {
   position: relative;
-}
-
-.experience-description.new-class {
-  display: block;
-  grid-template-columns: none;
+  text-align: initial;
 }
 
 
