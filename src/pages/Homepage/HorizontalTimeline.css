@@ -57,7 +57,7 @@
 }
 
 .timeline .events a::after {
-  /* circle marker */
+  /* circle marker for the horizontal timeline. */
   content: '';
   position: absolute;
   left: 50%;
@@ -182,7 +182,7 @@
 }
 
 .arrow-icon {
-  position: absolute;
+  display: initial;
   left: 0;
 }
 

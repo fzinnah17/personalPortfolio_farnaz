@@ -58,7 +58,8 @@ const AboutMe = () => {
         "Instructed college students on Web Development via implementations of applications such as Flix, Twitter, Instagram, etc.",
         "Provided students with solutions in < 2 minutes over 90% of the time in a time-sensitive live support channel on Slack.",
         "Resolved project bugs and git issues using documentation and React JS debugging tools via one-on-one zoom sessions",
-      ],
+        "Promoted interactive learning, fostering collaboration, and encouraging students to share knowledge in office hours."
+    ],
     },
     {
       date: "01/12/2022 - Present", // Con Edison: Dec 2022 - Present
