@@ -625,8 +625,7 @@ li:hover {
 }
 
 .about-me-section .about-description .tech-stack {
-  margin-top: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
   list-style-type: none;
   display: grid; 
   grid-template-columns: repeat(2, minmax(150px, 1fr));

@@ -190,6 +190,7 @@
 .experience-description {
   position: relative;
   text-align: initial;
+  font-size: 17px;;
 }
 
 
@@ -197,7 +198,6 @@
   list-style-type: disc;
   margin-left: 20px;
   color: white;
-  font-size: larger;
 }
 
 
