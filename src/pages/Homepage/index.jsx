@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Parallax } from 'react-parallax';
 import { MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from 'react-icons/md';
 import IntroWords from "./IntroWords";
 import Sidebar from "./Sidebar";
@@ -7,6 +8,14 @@ import AboutMe from "./AboutMe";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import ParallaxSection from "./ParallaxSection";
+
+const ParallaxComponent = ({ bgImage, speed, children }) => ( //reusable component 
+  <Parallax bgImage={bgImage} strength={speed}>
+    <div style={{ height: '100vh' }}>
+      {children}
+    </div>
+  </Parallax>
+);
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -65,10 +74,17 @@ const HomePage = () => {
           <img src="/images/fz-low-resolution-color-logo-transparent.png" alt="Logo" className="logo" />
         </div>
       )}
-      
-      <div className="intro-section">
+
+      {/* <div className="intro-section">
         <IntroWords />
-      </div>
+      </div> */}
+
+      <ParallaxComponent bgImage="https://svgshare.com/i/r3R.svg" speed={500}>
+        <div className="intro-section">
+          <IntroWords />
+        </div>
+      </ParallaxComponent>
+
       <Sidebar />
       {/* <ParallaxSection /> */}
       <div className="about-me-section">
@@ -80,8 +96,6 @@ const HomePage = () => {
       <div className="projects-section">
         <Projects />
       </div>
-
-
 
       <div className="fixed bottom-10 right-10 z-50">
         {showScrollDownArrow && (
