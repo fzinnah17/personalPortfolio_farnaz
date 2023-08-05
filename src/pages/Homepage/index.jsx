@@ -73,7 +73,6 @@ const HomePage = () => {
           <img src="/images/fz-low-resolution-color-logo-transparent.png" alt="Logo" className="logo" />
         </div>
       )}
-
       <ParallaxComponent bgImage="https://svgshare.com/i/r3R.svg" speed={500}>
         <div className="intro-section">
           <IntroWords />
@@ -81,7 +80,8 @@ const HomePage = () => {
       </ParallaxComponent>
 
       <Sidebar />
-      <div className="about-me-section">
+
+      <div className="about-me-section" id="about-me">
         <AboutMe />
       </div>
       <div className="experience-section">

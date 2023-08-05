@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaHome, FaFemale } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { MdWavingHand } from 'react-icons/md';
@@ -15,15 +15,19 @@ const Sidebar = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  console.log("Sidebar rendered");
 
   useEffect(() => {
-    lottie.loadAnimation({
+    const animation = lottie.loadAnimation({
       container: container.current, // the dom element that will contain the animation
       renderer: 'svg',
       loop: true,
       autoplay: true,
       path: '/animation_lkx8zj1e.json', // the path to the animation json
     });
+    return () => {
+      animation.destroy();
+    };
   }, []);
 
 
@@ -36,19 +40,16 @@ const Sidebar = () => {
         <FaHome size={24} />
       </div>
 
-
-      {/* <div className="sidebar-item" onClick={() => handleScroll("about-me")} title="About Me">
-        <FaFemale size={24} />
-      </div> */}
-
-<div className="sidebar-item" onClick={() => handleScroll("about-me")} title="About Me">
-        <div ref={container} style={{width: 50, height: 50}}></div> {/* Lottie animation will be loaded here */}
+      <div className="sidebar-item" onClick={() => handleScroll("about-me")} title="About Me">
+        <div className="lottie-container" ref={container} style={{ width: 50, height: 50 }}></div>
+        <span className="hover-text">About Me</span>
       </div>
 
-      <div className="sidebar-item" onClick={() => handleScroll("experiences")} title = "Work">
+
+      <div className="sidebar-item" onClick={() => handleScroll("experiences")} title="Work">
         <MdWork size={24} />
       </div>
-      <div className="sidebar-item" onClick={() => handleScroll("projects")} title = "Projects">
+      <div className="sidebar-item" onClick={() => handleScroll("projects")} title="Projects">
         <MdLibraryBooks size={24} />
       </div>
       <a href="https://github.com/fzinnah17" target="_blank" rel="noopener noreferrer" className="sidebar-item">

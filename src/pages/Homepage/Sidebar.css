@@ -15,8 +15,36 @@
   width: 4rem;
   color: gray;
   transition: color 0.3s ease;
+  cursor: pointer;
+  position: relative;
 }
 
-.sidebar-item:hover {
-  color: white;
+.lottie-container{
+  position: absolute;
+}
+
+.hover-text {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  left: 60%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 14px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-item:hover .hover-text {
+  opacity: 1; /* Show the text on hover */
+  
+}
+
+.sidebar-item:hover .lottie-container {
+  opacity: 0; /* Hide the icon on hover */
 }

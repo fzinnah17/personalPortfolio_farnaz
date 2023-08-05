@@ -59,8 +59,8 @@ const IntroWords = () => {
 
           <div className="paragraph-container">
             <Text className="intro-description" variant="body2">
-            <span className="name-highlight"> Farnaz  </span>   here <img src="/images/farnaziPhone.png" alt="Waving Memoji" className="avatar" />
-           </Text>
+              <span className="name-highlight"> Farnaz  </span>   here <img src="/images/farnaziPhone.png" alt="Waving Memoji" className="avatar" />
+            </Text>
             <div className="animated-passionate-text">
               {showAnimatedText && <AnimatedPassionateText />}
             </div>
