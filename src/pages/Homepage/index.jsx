@@ -7,7 +7,6 @@ import Sidebar from "./Sidebar";
 import AboutMe from "./AboutMe";
 import Experience from "./Experience";
 import Projects from "./Projects";
-import ParallaxSection from "./ParallaxSection";
 
 const ParallaxComponent = ({ bgImage, speed, children }) => ( //reusable component 
   <Parallax bgImage={bgImage} strength={speed}>
@@ -75,10 +74,6 @@ const HomePage = () => {
         </div>
       )}
 
-      {/* <div className="intro-section">
-        <IntroWords />
-      </div> */}
-
       <ParallaxComponent bgImage="https://svgshare.com/i/r3R.svg" speed={500}>
         <div className="intro-section">
           <IntroWords />
@@ -86,7 +81,6 @@ const HomePage = () => {
       </ParallaxComponent>
 
       <Sidebar />
-      {/* <ParallaxSection /> */}
       <div className="about-me-section">
         <AboutMe />
       </div>
