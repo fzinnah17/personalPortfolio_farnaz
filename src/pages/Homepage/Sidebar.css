@@ -21,6 +21,7 @@
 
 .lottie-container{
   position: absolute;
+  cursor: pointer;
 }
 
 .hover-text {

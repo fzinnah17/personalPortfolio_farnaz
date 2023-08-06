@@ -5,8 +5,8 @@ import { MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from
 import IntroWords from "./IntroWords";
 import Sidebar from "./Sidebar";
 import AboutMe from "./AboutMe";
-import Experience from "./Experience";
 import Projects from "./Projects";
+import Contact from "./Contact";
 
 const ParallaxComponent = ({ bgImage, speed, children }) => ( //reusable component 
   <Parallax bgImage={bgImage} strength={speed}>
@@ -74,7 +74,7 @@ const HomePage = () => {
         </div>
       )}
       <ParallaxComponent bgImage="https://svgshare.com/i/r3R.svg" speed={500}>
-        <div className="intro-section">
+        <div className="intro-section" id="home">
           <IntroWords />
         </div>
       </ParallaxComponent>
@@ -84,11 +84,13 @@ const HomePage = () => {
       <div className="about-me-section" id="about-me">
         <AboutMe />
       </div>
-      <div className="experience-section">
-        <Experience />
-      </div>
-      <div className="projects-section">
+
+      <div className="projects-section" id="projects">
         <Projects />
+      </div>
+
+      <div className="contact-section" id="contact">
+        <Contact />
       </div>
 
       <div className="fixed bottom-10 right-10 z-50">
