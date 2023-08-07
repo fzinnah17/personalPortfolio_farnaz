@@ -8,16 +8,17 @@ import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Contact from "./Contact";
 
+//assigning different properties to the sections Array
 const sections = [
-  { className: 'intro-section', id: 'home', content: <IntroWords />, bgImage: 'path-to-image', speed: 300 },
-  { className: 'about-me-section', id: 'about-me', content: <AboutMe />, bgImage: 'path-to-another-image', speed: 500 },
-  { className: 'projects-section', id: 'projects', content: <Projects />, bgImage: 'path-to-another-image', speed: 500 },
-  { className: 'contact-section', id: 'contact', content: <Contact />, bgImage: 'path-to-another-image', speed: 500 }
+  { className: 'intro-section', id: 'home', content: <IntroWords />, bgImage: 'path-to-image', speed: 300, minHeight: '100vh' },
+  { className: 'about-me-section', id: 'about-me', content: <AboutMe />, bgImage: 'path-to-another-image', speed: 500, minHeight: '100vh' },
+  { className: 'projects-section', id: 'projects', content: <Projects />, bgImage: 'path-to-another-image', speed: 500, minHeight: '100vh' },
+  { className: 'contact-section', id: 'contact', content: <Contact />, bgImage: 'path-to-another-image', speed: 500, minHeight: '100vh' }
 ];
-
-const ParallaxComponent = ({ bgImage, speed, children }) => ( //reusable component 
+//passing in those properties as a prop
+const ParallaxComponent = ({ bgImage, speed, children, minHeight }) => ( //reusable component 
   <Parallax bgImage={bgImage} strength={speed}>
-    <div style={{ height: '103vh' }}>
+    <div style={{ minHeight: minHeight }}>
       {children}
     </div>
   </Parallax>
@@ -80,9 +81,9 @@ const HomePage = () => {
           <img src="/images/fz-low-resolution-color-logo-transparent.png" alt="Logo" className="logo" />
         </div>
       )}
-
+      {/* mapping over the sections and rendering them, pass the props */}
       {sections.map(section => (
-        <ParallaxComponent key={section.id} bgImage={section.bgImage} speed={section.speed}>
+        <ParallaxComponent key={section.id} bgImage={section.bgImage} speed={section.speed} minHeight={section.minHeight}>
           <div className={`section ${section.className}`} id={section.id}>
             {section.content}
           </div>

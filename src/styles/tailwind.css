@@ -447,8 +447,8 @@ li:hover {
 
 .intro-section .avatar {
   display: inline-block;
-  width: 120px; /* Adjust the size as needed */
-  height: 120px; /* Adjust the size as needed */
+  width: 120px;
+  height: 120px; 
   margin-bottom: 25px;
 }
 
@@ -460,7 +460,6 @@ li:hover {
 .about-me-section {
   background-size: cover;
   background-position: center;
-  height: calc(103vh);
   padding-left: 45px;
   padding-right: 35px;
 }
