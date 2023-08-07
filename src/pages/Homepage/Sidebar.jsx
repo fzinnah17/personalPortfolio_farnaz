@@ -27,11 +27,14 @@ const Sidebar = () => {
 
 
   const handleScroll = (id) => {
+    console.log("Attempting to scroll to:", id);
     const element = document.getElementById(id);
+    console.log("Found element:", element);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  
   console.log("Sidebar rendered");
 
   useEffect(() => {

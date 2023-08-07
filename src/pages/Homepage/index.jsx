@@ -80,16 +80,16 @@ const HomePage = () => {
           <img src="/images/fz-low-resolution-color-logo-transparent.png" alt="Logo" className="logo" />
         </div>
       )}
-{sections.map(section => (
-  <ParallaxComponent key={section.id} bgImage={section.bgImage} speed={section.speed}>
-    <div className={`section ${section.className}`}>
-      {section.content}
-    </div>
-  </ParallaxComponent>
-))}
 
+      {sections.map(section => (
+        <ParallaxComponent key={section.id} bgImage={section.bgImage} speed={section.speed}>
+          <div className={`section ${section.className}`} id={section.id}>
+            {section.content}
+          </div>
+        </ParallaxComponent>
+      ))}
 
-<Sidebar />
+      <Sidebar />
 
       <div className="fixed bottom-10 right-10 z-50">
         {showScrollDownArrow && (
