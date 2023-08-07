@@ -460,7 +460,7 @@ li:hover {
 .about-me-section {
   background-size: cover;
   background-position: center;
-  height: calc(96vh);
+  height: calc(103vh);
   padding-left: 45px;
   padding-right: 35px;
 }
@@ -763,17 +763,9 @@ li:hover {
   border: none;
 }
 
-
-/* .experience-section {
-  background-color: purple;
-  background-size: cover;
-  background-position: center;
-} */
-
 .projects-section {
   background-color: orange;
   background-size: cover;
   background-position: center;
-  /* Additional styling for the projects section */
 }
 

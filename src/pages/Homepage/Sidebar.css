@@ -5,6 +5,7 @@
   left: 0;
   width: 6rem;
   background-color: transparent;
+  z-index: 1000;
 }
 
 .sidebar-item {

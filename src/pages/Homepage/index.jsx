@@ -8,9 +8,16 @@ import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Contact from "./Contact";
 
+const sections = [
+  { className: 'intro-section', id: 'home', content: <IntroWords />, bgImage: 'path-to-image', speed: 300 },
+  { className: 'about-me-section', id: 'about-me', content: <AboutMe />, bgImage: 'path-to-another-image', speed: 500 },
+  { className: 'projects-section', id: 'projects', content: <Projects />, bgImage: 'path-to-another-image', speed: 500 },
+  { className: 'contact-section', id: 'contact', content: <Contact />, bgImage: 'path-to-another-image', speed: 500 }
+];
+
 const ParallaxComponent = ({ bgImage, speed, children }) => ( //reusable component 
   <Parallax bgImage={bgImage} strength={speed}>
-    <div style={{ height: '100vh' }}>
+    <div style={{ height: '103vh' }}>
       {children}
     </div>
   </Parallax>
@@ -73,25 +80,16 @@ const HomePage = () => {
           <img src="/images/fz-low-resolution-color-logo-transparent.png" alt="Logo" className="logo" />
         </div>
       )}
-      <ParallaxComponent bgImage="https://svgshare.com/i/r3R.svg" speed={500}>
-        <div className="intro-section" id="home">
-          <IntroWords />
-        </div>
-      </ParallaxComponent>
+{sections.map(section => (
+  <ParallaxComponent key={section.id} bgImage={section.bgImage} speed={section.speed}>
+    <div className={`section ${section.className}`}>
+      {section.content}
+    </div>
+  </ParallaxComponent>
+))}
 
-      <Sidebar />
 
-      <div className="about-me-section" id="about-me">
-        <AboutMe />
-      </div>
-
-      <div className="projects-section" id="projects">
-        <Projects />
-      </div>
-
-      <div className="contact-section" id="contact">
-        <Contact />
-      </div>
+<Sidebar />
 
       <div className="fixed bottom-10 right-10 z-50">
         {showScrollDownArrow && (
