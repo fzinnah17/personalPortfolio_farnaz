@@ -10,7 +10,7 @@ import Contact from "./Contact";
 
 //assigning different properties to the sections Array
 const sections = [
-  { className: 'intro-section', id: 'home', content: <IntroWords />, bgImage: 'path-to-image', speed: 300, minHeight: '100vh' },
+  { className: 'intro-section', id: 'home', content: <IntroWords />, bgImage: 'https://svgshare.com/i/r3R.svg', speed: 300, minHeight: '100vh' },
   { className: 'about-me-section', id: 'about-me', content: <AboutMe />, bgImage: 'path-to-another-image', speed: 500, minHeight: '100vh' },
   { className: 'projects-section', id: 'projects', content: <Projects />, bgImage: 'path-to-another-image', speed: 500, minHeight: '100vh' },
   { className: 'contact-section', id: 'contact', content: <Contact />, bgImage: 'path-to-another-image', speed: 500, minHeight: '100vh' }

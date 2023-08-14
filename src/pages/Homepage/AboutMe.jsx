@@ -4,6 +4,18 @@ import { FaJsSquare, FaPython, FaReact, FaJava, FaNode, FaHtml5, FaCss3 } from "
 import HorizontalTimeline from './HorizontalTimeline';
 
 const AboutMe = () => {
+
+  const techStacks = [
+    { Icon: FaJsSquare, text: "Javascript ES6+" },
+    { Icon: FaPython, text: "Python" },
+    { Icon: FaReact, text: "React.js" },
+    { Icon: FaJava, text: "Java" },
+    { Icon: FaNode, text: "Node.js" },
+    { Icon: FaHtml5, text: "HTML" },
+    { Icon: FaCss3, text: "CSS" },
+    // Note: There were multiple repeated CSS icons, so I left one. You can add more if you wish.
+  ];
+
   const [isVisible, setIsVisible] = useState(false);
 
 
@@ -59,7 +71,7 @@ const AboutMe = () => {
         "Provided students with solutions in < 2 minutes over 90% of the time in a time-sensitive live support channel on Slack.",
         "Resolved project bugs and git issues using documentation and React JS debugging tools via one-on-one zoom sessions",
         "Promoted interactive learning, fostering collaboration, and encouraging students to share knowledge in office hours."
-    ],
+      ],
     },
     {
       date: "01/12/2022 - Present", // Con Edison: Dec 2022 - Present
@@ -120,10 +132,10 @@ const AboutMe = () => {
         <div className="about-content">
           <div className="about-description">
             <Text className="about-description-text" variant="body2">
-              I am currently a <b>Software Development Engineer</b> at{" "}
-              <a href="https://www.aboutamazon.com/">Amazon</a>, working in the AWS sector under team Route53.
+              I am currently as a <b>Software Engineering Intern</b> at{" "}
+              <a href="https://www.aboutamazon.com/">Con Edison</a>, working in the Energy Services Team.
               At the same time, I am undertaking a part-time <b>Master's of Science</b> in <b>Software Engineering</b> at{" "}
-              <a href="https://www.ox.ac.uk/about">University of Oxford</a>.
+              <a href="https://www.ox.ac.uk/about">The City College of New York</a>.
             </Text>
 
             <HorizontalTimeline experiences={experiences} counter={counter} increment={increment} decrement={decrement} />
@@ -134,50 +146,16 @@ const AboutMe = () => {
             </div>
 
             <ul className="tech-stack">
-              <li>
-                <FaJsSquare className="tech-icon" />
-                <span className="tech-text" data-text="Javascript ES6+">Javascript ES6+</span>
-              </li>
-              <li>
-                <FaPython className="tech-icon" />
-                <span className="tech-text" data-text="Python">Python</span>
-              </li>
-              <li>
-                <FaReact className="tech-icon" />
-                <span className="tech-text" data-text="React.js">React.js</span>
-              </li>
-              <li>
-                <FaJava className="tech-icon" />
-                <span className="tech-text" data-text="Java">Java</span>
-              </li>
-              <li>
-                <FaNode className="tech-icon" />
-                <span className="tech-text" data-text="Node.js">Node.js</span>
-              </li>
-              <li>
-                <FaHtml5 className="tech-icon" />
-                <span className="tech-text" data-text="HTML">HTML</span>
-              </li>
-              <li>
-                <FaCss3 className="tech-icon" />
-                <span className="tech-text" data-text="CSS">CSS</span>
-              </li>
-              <li>
-                <FaCss3 className="tech-icon" />
-                <span className="tech-text" data-text="CSS">CSS</span>
-              </li>
-              <li>
-                <FaCss3 className="tech-icon" />
-                <span className="tech-text" data-text="CSS">CSS</span>
-              </li>
-              <li>
-                <FaCss3 className="tech-icon" />
-                <span className="tech-text" data-text="CSS">CSS</span>
-              </li>
+              {techStacks.map((tech, index) => (
+                <li key={index}>
+                  <tech.Icon className="tech-icon" />
+                  <span className="tech-text" data-text={tech.text}>{tech.text}</span>
+                </li>
+              ))}
             </ul>
 
             <Text className="about-additional-text" variant="body2">
-              Outside of work, I'm interested in following the developments of science. I also play a lot of video games. And make TikToks.
+              Outside of work, I love to travel with my friends and family. I love to workout, attend my therapists twice a week, and read books.
             </Text>
 
           </div>
