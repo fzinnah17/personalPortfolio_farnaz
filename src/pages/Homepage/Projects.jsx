@@ -1,67 +1,56 @@
-import React from "react";
-import { FaJsSquare, FaPython, FaReact, FaJava, FaNode, FaHtml5, FaCss3, FaGithub } from "react-icons/fa";
-import "./Projects.css";
+import React, { useState } from 'react';
+import './Projects.css';
 
-const Projects = () => {
-  const technologies = 
-  [
-    { Icon: FaJsSquare, text: "Javascript ES6+" },
-    { Icon: FaPython, text: "Python" },
-    { Icon: FaReact, text: "React.js" },
-    { Icon: FaJava, text: "Java" },
-    { Icon: FaNode, text: "Node.js" },
-    { Icon: FaHtml5, text: "HTML" },
-    { Icon: FaCss3, text: "CSS" },
-  ]
+function Projects() {
+  const [activeFilter, setActiveFilter] = useState('');
 
-const project = [
-  {
-    title: "Portfolio",
-    description: "Short description of the project.",
-    tech: [FaReact, FaHtml5, FaCss3],
-    github: "github_link",
-  },
-  {
-    title: "Portfolio",
-    description: "Short description of the project.",
-    tech: [FaReact, FaHtml5, FaCss3],
-    github: "github_link",
-  },
-  {
-    title: "Portfolio",
-    description: "Short description of the project.",
-    tech: [FaReact, FaHtml5, FaCss3],
-    github: "github_link",
-  },
-  {
-    title: "Portfolio",
-    description: "Short description of the project.",
-    tech: [FaReact, FaHtml5, FaCss3],
-    github: "github_link",
-  },
-];
-return (
-  <div className="projects">
-    <div className="projects-container">
-      {project.map(project => (
-        <div className="project-card">
-          <img src="path_to_project_image" alt={project.title} className="project-image" />
-          <h3 className="project-title">{project.title}</h3>
-          <p className="project-description">{project.description}</p>
-          <div className="tech-icons">
-            {project.tech.map(TechIcon => (
-              <TechIcon className="tech-icon" />
-            ))}
-          </div>
-          <a href={project.github} target="_blank" rel="noopener noreferrer" className="github-link">
-            <FaGithub />
-          </a>
-        </div>
-      ))}
+  const handleFilterClick = (filter) => {
+    setActiveFilter(filter);
+  }
+  const portfolioData = [
+    {
+      group: "group-1",
+      imgSrc: "http://farm3.staticflickr.com/2675/4029465977_e0ec2d53c6_z.jpg?zz=1",
+      title: "Project 1",
+      description: "This is the description for Project 1.",
+      githubLink: "https://github.com/username/project-1"
+    },
+    {
+      group: "group-2",
+      imgSrc: "http://farm1.staticflickr.com/212/461888176_cd0894c52c_z.jpg?zz=1",
+      title: "Project 2",
+      description: "This is the description for Project 2.",
+      githubLink: "https://github.com/username/project-2"
+    },
+  ];
+
+
+  return (
+    <div className="project-wrap">
+      <ul className="project-portfolio">
+        {portfolioData.map((item, index) => (
+          <li
+            key={index}
+            className={item.group}
+            style={{ display: (activeFilter && item.group !== activeFilter) ? 'none' : 'block' }}
+          >
+            <figure>
+              <img className="portfolio-img" src={item.imgSrc} alt="placeholder" />
+              <h3 className="portfolio-title">{item.title}</h3>
+              <p className="portfolio-description">{item.description}</p>
+              <figcaption>
+                <a href={item.githubLink} target="_blank" rel="noopener noreferrer" className="portfolio-link">
+                  <img src="path_to_github_icon.png" alt="GitHub" className="github-inner-icon" />
+                </a>
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+
+      </ul>
     </div>
-  </div>
-);
-  
-};
+  );
+}
 
 export default Projects;
+

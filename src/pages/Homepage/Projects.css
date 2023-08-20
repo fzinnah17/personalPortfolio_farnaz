@@ -1,39 +1,152 @@
-.projects {
-    height: 559px;
-    margin-top: 100px;
-    padding: 0 20px;
-    position: relative;
-    width: 100%;
+.portfolio-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all .4s ease-in-out;
+}
+
+
+.project-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+.project-portfolio {
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.project-portfolio::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.project-portfolio li {
+  float: left;
+  width: 100%;
+  list-style: none;
+  transition: all .4s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.project-portfolio figure {
+  margin: 0 20px 20px 0;
+  position: relative;
+  text-align: center;
+  border: 3px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all .4s ease-in-out;
+}
+
+.project-portfolio figure:hover {
+  border: 3px solid #D29990;
+}
+
+.project-portfolio figure:hover .portfolio-img {
+  opacity: .3;
+  transform: scale(5);
+}
+
+.project-portfolio figure:hover figcaption {
+  top: 50%;
+  margin-top: -20px;
+}
+
+.project-portfolio figure:hover h3 {
+  bottom: 70%;
+}
+
+.project-portfolio figcaption {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  transition: all .2s ease-in-out .2s;
+}
+
+.portfolio-link {
+  background-color: #D29990;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-shadow: 0 -1px 1px #a47374;
+  text-decoration: none;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all .2s ease-in-out;
+  text-align: center;
+}
+
+.portfolio-link:hover {
+  background-color: #e8a9a2;
+}
+
+.github-inner-icon {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle; 
+}
+
+.portfolio-title {
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  padding: 1em .7em;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  transition: all .15s ease-in-out .4s;
+}
+
+.portfolio-description {
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  font-weight: 300;
+  position: absolute;
+  bottom: 80%; 
+  left: 0;
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  transition: all .15s ease-in-out .4s;
+  opacity: 0; 
+  visibility: hidden;
+}
+
+.project-portfolio figure:hover .portfolio-description {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@media (min-width: 460px) {
+  .project-portfolio li {
+      width: 50%;
   }
-  
-  .projects-container {
-    background-repeat: no-repeat;
-    background-size: cover;
-    bottom: 0;
-    display: flex;
-    height: 525px;
-    justify-content: flex-end;
-    margin: 0 auto;
-    padding: 50px;
-    position: absolute;
-    width: 100%;
+}
+
+@media (min-width: 740px) {
+  .project-portfolio li {
+      width: 50%;
   }
-  
-  .project-card {
-    transition: all 0.3s ease-in-out;
 }
 
-.project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
 
-.tech-icon:hover {
-    animation: bounce 0.5s infinite;
-}
-
-.github-link:hover {
-    transform: rotate(20deg);
-}
-
-  
