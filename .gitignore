@@ -24,3 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 .git.zip
 .git
+
+# local env files
+.env.local
