@@ -22,6 +22,20 @@ function Projects() {
       description: "This is the description for Project 2.",
       githubLink: "https://github.com/username/project-2"
     },
+    {
+      group: "group-2",
+      imgSrc: "http://farm1.staticflickr.com/212/461888176_cd0894c52c_z.jpg?zz=1",
+      title: "Project 2",
+      description: "This is the description for Project 2.",
+      githubLink: "https://github.com/username/project-2"
+    },
+    {
+      group: "group-2",
+      imgSrc: "http://farm1.staticflickr.com/212/461888176_cd0894c52c_z.jpg?zz=1",
+      title: "Project 2",
+      description: "This is the description for Project 2.",
+      githubLink: "https://github.com/username/project-2"
+    },
   ];
 
 

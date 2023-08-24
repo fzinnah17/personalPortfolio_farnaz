@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 50px;
   }
   
   body[data-theme='dark'] .contact_content {
@@ -18,18 +19,29 @@
 
   .contact-box {
     display: flex;
-    width: 30%;
+    width: 60%;
     margin: 0 auto;
     box-shadow: 0 2.5px 5px #ccc;
     border-radius: 25px;
     overflow: hidden; 
 }
+
+.contact_left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center the image/animation */
+  background-color: #DAE5ED; /* you can adjust this */
+  padding: 25px;
+  border-radius: 25px 0 0 25px; 
+}
+
   
   .contact_right {
-    flex: 1;
+    flex: 2;  /* takes twice the space of contact_left */
+    border-radius: 0 25px 25px 0;
     width: 30%;
     padding: 25px;
-    border-radius: 25px 25px;
     color: white;
     /* background: radial-gradient( circle at 55% 92%, #426691 0 12%, transparent 12.2% ), radial-gradient( circle at 94% 72%, #426691 0 10%, transparent 10.2% ), radial-gradient( circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2% ), radial-gradient( circle at 0% 0%, #263a53 0 40%, transparent 40.2% ), #1f2e43; */
     background:

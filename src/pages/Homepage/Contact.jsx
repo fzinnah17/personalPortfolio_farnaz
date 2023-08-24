@@ -41,6 +41,10 @@ const Contact = () => {
   return (
     <div className="contact_wrapper">
       <div className="contact-box">
+      <div className="contact_left">
+              <img src="/path/to/your/image.jpg" alt="Your description here" /> 
+              {/* Or replace the img tag with your animation component */}
+          </div>
           <div className="contact_right">
             <h1>Contact</h1>
             {submitted ? (

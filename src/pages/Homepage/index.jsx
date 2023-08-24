@@ -12,8 +12,8 @@ import Contact from "./Contact";
 const sections = [
   { className: 'intro-section', id: 'home', content: <IntroWords />, bgImage: 'https://svgshare.com/i/r3R.svg', speed: 300, minHeight: '100vh' },
   { className: 'about-me-section', id: 'about-me', content: <AboutMe />, bgImage: 'path-to-another-image', speed: 500, minHeight: '100vh' },
-  { className: 'projects-section', id: 'projects', content: <Projects />, bgImage: 'path-to-another-image', speed: 500, minHeight: '100vh' },
-  { className: 'contact-section', id: 'contact', content: <Contact />, bgImage: 'path-to-another-image', speed: 500, minHeight: '100vh' }
+  { className: 'projects-section', id: 'projects', content: <Projects />, bgImage: 'https://svgshare.com/i/r3R.svg', speed: 500, minHeight: '100vh' },
+  { className: 'contact-section', id: 'contact', content: <Contact />, bgImage: 'path-to-another-image', speed: 500, minHeight: '60vh' }
 ];
 //passing in those properties as a prop
 const ParallaxComponent = ({ bgImage, speed, children, minHeight }) => ( //reusable component 
