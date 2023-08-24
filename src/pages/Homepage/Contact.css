@@ -5,7 +5,6 @@
   }
   
   body[data-theme='dark'] .contact_content {
-    /* You can adjust this part according to your site's theme or remove it if you don't have dark mode */
     color: white;
     background: #221F2E;
   }
@@ -19,36 +18,54 @@
 
   .contact-box {
     display: flex;
-    width: 60%; /* You can adjust this width based on your design preference */
-    margin: 0 auto; /* To center the box */
-    box-shadow: 0 2.5px 5px #ccc;
-    border-radius: 25px; /* You can adjust this if you want */
-    overflow: hidden; /* This is to ensure child elements respect the border-radius of the parent */
-}
-
-.contact-left {
-    flex: 1; /* This ensures the left side takes up half the width */
     width: 30%;
-    background: radial-gradient( circle at 55% 92%, #426691 0 12%, transparent 12.2% ), radial-gradient( circle at 94% 72%, #426691 0 10%, transparent 10.2% ), radial-gradient( circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2% ), radial-gradient( circle at 0% 0%, #263a53 0 40%, transparent 40.2% ), #1f2e43;
-    border-radius: 10px 0 0 10px; 
-    padding: 8% 5% 10% 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* These three lines help center the content inside contact-left */
+    margin: 0 auto;
+    box-shadow: 0 2.5px 5px #ccc;
+    border-radius: 25px;
+    overflow: hidden; 
 }
   
-  .contact_content {
-    flex: 1; /* This ensures the right side takes up half the width */
+  .contact_right {
+    flex: 1;
     width: 30%;
     padding: 25px;
     border-radius: 25px 25px;
-    background-color: #fff;
-    box-shadow: 0 2.5px 5px #ccc;
-    margin: 20px auto;
+    color: white;
+    /* background: radial-gradient( circle at 55% 92%, #426691 0 12%, transparent 12.2% ), radial-gradient( circle at 94% 72%, #426691 0 10%, transparent 10.2% ), radial-gradient( circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2% ), radial-gradient( circle at 0% 0%, #263a53 0 40%, transparent 40.2% ), #1f2e43; */
+    background:
+    /* Big Circle */
+    radial-gradient(circle at 50% 50%, #6B9DC2 0 12%, transparent 12.2%),
+    
+    /* Medium Circles */
+    radial-gradient(circle at 20% 20%, #7AA9B5 0 9%, transparent 9.2%),
+    radial-gradient(circle at 70% 30%, #E0B28D 0 9%, transparent 9.2%),
+    radial-gradient(circle at 20% 75%, #9BBDD4 0 9%, transparent 9.2%),
+
+    /* Small Circles */
+    radial-gradient(circle at 10% 40%, #B4D7B2 0 4%, transparent 4.2%),
+    radial-gradient(circle at 40% 60%, #A5C5D0 0 5%, transparent 5.2%),
+    radial-gradient(circle at 80% 90%, #8AB0C1 0 4%, transparent 4.2%),
+    radial-gradient(circle at 95% 20%, #A6BFD7 0 5%, transparent 5.2%),
+    
+    /* Rectangles */
+    linear-gradient(to right, #B8D1DB 20%, transparent 30%, #B8D1DB 70%),
+    linear-gradient(to bottom, #E5C8A8 15%, transparent 25%, #E5C8A8 75%),
+    linear-gradient(to top, #B4D7B2 10%, transparent 20%, #B4D7B2 70%),
+    
+    /* Triangles using conic gradient */
+    conic-gradient(#B4D7B2 0% 10%, transparent 10% 20%, #E0B28D 20% 30%, transparent 30% 40%),
+    conic-gradient(#92BAD5 0% 5%, transparent 5% 10%, #A5C5D0 10% 15%, transparent 15% 20%, #9BBDD4 20% 25%, transparent 25% 30%),
+
+    #DAE5ED; /* Adjusted base background to a more muted baby blue */
+    position: relative;
+  overflow: hidden;
+
   }
   
-  .contact_content h1 {
+  .contact_right h1 {
     text-align: center;
+    font-size: larger;
+    margin-bottom: 20px;
   }
   
   .contact_grid-35 {
@@ -77,8 +94,10 @@
     width: -webkit-fill-available;
     padding: 8px;
     margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    resize: none;
   }
   
   .contact_buttons {
