@@ -76,6 +76,10 @@ const Contact = () => {
 
   return (
     <div className="contact_wrapper">
+      <div className="contact-box">
+        <div className="contact-left">
+          
+        </div>
       <div className="contact_content">
         <h1>Contact</h1>
         {submitted ? (
@@ -110,6 +114,7 @@ const Contact = () => {
             </div>
           </form>
         )}
+      </div>
       </div>
     </div>
   );

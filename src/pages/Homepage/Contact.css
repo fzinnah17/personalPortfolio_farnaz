@@ -16,8 +16,29 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.1);
   }
+
+  .contact-box {
+    display: flex;
+    width: 60%; /* You can adjust this width based on your design preference */
+    margin: 0 auto; /* To center the box */
+    box-shadow: 0 2.5px 5px #ccc;
+    border-radius: 25px; /* You can adjust this if you want */
+    overflow: hidden; /* This is to ensure child elements respect the border-radius of the parent */
+}
+
+.contact-left {
+    flex: 1; /* This ensures the left side takes up half the width */
+    width: 30%;
+    background: radial-gradient( circle at 55% 92%, #426691 0 12%, transparent 12.2% ), radial-gradient( circle at 94% 72%, #426691 0 10%, transparent 10.2% ), radial-gradient( circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2% ), radial-gradient( circle at 0% 0%, #263a53 0 40%, transparent 40.2% ), #1f2e43;
+    border-radius: 10px 0 0 10px; 
+    padding: 8% 5% 10% 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* These three lines help center the content inside contact-left */
+}
   
   .contact_content {
+    flex: 1; /* This ensures the right side takes up half the width */
     width: 30%;
     padding: 25px;
     border-radius: 25px 25px;
