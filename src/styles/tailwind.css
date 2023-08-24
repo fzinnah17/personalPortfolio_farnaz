@@ -134,6 +134,7 @@ li:hover {
   display: block;
   transform-origin: -50% center;
   border-radius: 15%;
+  background: linear-gradient(135deg, #4A7C9E, #DAE5ED);
 }
 
 .intro-section .📦:after {
