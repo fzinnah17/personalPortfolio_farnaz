@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { app, db } from 'config/firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import "firebase/firestore";
+import "./Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,38 +39,78 @@ const Contact = () => {
     setSubmitted(true);
   };
 
+  // return (
+  //   <div>
+  //     <h1>Contact</h1>
+  //     {submitted ? (
+  //       <p>Thanks for reaching out! I'll get back to you soon.</p>
+  //     ) : (
+  //       <form onSubmit={handleSubmit}>
+  //         {fields.map((field) => (
+  //           <div key={field.key}>
+  //             <label>
+  //               {field.label}:
+  //               {field.type === "textarea" ? (
+  //                 <textarea
+  //                   value={formData[field.key]}
+  //                   onChange={(e) => handleChange(e, field.key)}
+  //                   required
+  //                 />
+  //               ) : (
+  //                 <input
+  //                   type={field.type}
+  //                   value={formData[field.key]}
+  //                   onChange={(e) => handleChange(e, field.key)}
+  //                   required
+  //                 />
+  //               )}
+  //             </label>
+  //             <br />
+  //           </div>
+  //         ))}
+  //         <button type="submit">Submit</button>
+  //       </form>
+  //     )}
+  //   </div>
+  // );
+
   return (
-    <div>
-      <h1>Contact</h1>
-      {submitted ? (
-        <p>Thanks for reaching out! I'll get back to you soon.</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          {fields.map((field) => (
-            <div key={field.key}>
-              <label>
-                {field.label}:
-                {field.type === "textarea" ? (
-                  <textarea
-                    value={formData[field.key]}
-                    onChange={(e) => handleChange(e, field.key)}
-                    required
-                  />
-                ) : (
-                  <input
-                    type={field.type}
-                    value={formData[field.key]}
-                    onChange={(e) => handleChange(e, field.key)}
-                    required
-                  />
-                )}
-              </label>
-              <br />
+    <div className="contact_wrapper">
+      <div className="contact_content">
+        <h1>Contact</h1>
+        {submitted ? (
+          <p>Thanks for reaching out! I'll get back to you soon.</p>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            {fields.map((field) => (
+              <fieldset key={field.key}>
+                <div className="contact_grid-35">
+                  <label>{field.label}:</label>
+                </div>
+                <div className="contact_grid-65">
+                  {field.type === "textarea" ? (
+                    <textarea
+                      value={formData[field.key]}
+                      onChange={(e) => handleChange(e, field.key)}
+                      required
+                    />
+                  ) : (
+                    <input
+                      type={field.type}
+                      value={formData[field.key]}
+                      onChange={(e) => handleChange(e, field.key)}
+                      required
+                    />
+                  )}
+                </div>
+              </fieldset>
+            ))}
+            <div className="contact_buttons">
+              <button type="submit" className="contact_Btn">Submit</button>
             </div>
-          ))}
-          <button type="submit">Submit</button>
-        </form>
-      )}
+          </form>
+        )}
+      </div>
     </div>
   );
 };

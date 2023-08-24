@@ -1,0 +1,91 @@
+.contact_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  body[data-theme='dark'] .contact_content {
+    /* You can adjust this part according to your site's theme or remove it if you don't have dark mode */
+    color: white;
+    background: #221F2E;
+  }
+  
+  body[data-theme='light'] .contact_content {
+    color: black;
+    background: linear-gradient(135deg, #58a497, #2db8e7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact_content {
+    width: 30%;
+    padding: 25px;
+    border-radius: 25px 25px;
+    background-color: #fff;
+    box-shadow: 0 2.5px 5px #ccc;
+    margin: 20px auto;
+  }
+  
+  .contact_content h1 {
+    text-align: center;
+  }
+  
+  .contact_grid-35 {
+    width: 35%;
+  }
+  
+  .contact_grid-65 {
+    width: 65%;
+    display: flex;
+    align-items: center;
+  }
+  
+  fieldset {
+    display: flex;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+  }
+  
+  input, textarea {
+    width: -webkit-fill-available;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .contact_buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .contact_Btn {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, #00dbde, #fc00ff, #fc00ff, #00dbde);
+    background-size: 400%;
+    animation: effect 10s linear infinite;
+  }
+  
+  @keyframes effect {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400% 0;
+    }
+  }
+  
