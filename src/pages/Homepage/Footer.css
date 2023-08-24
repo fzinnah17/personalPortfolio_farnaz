@@ -1,0 +1,16 @@
+.footer-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content_footer_logotext {
+    padding-top: 50px;
+    z-index: 2;
+    position: absolute;
+    margin: 0;
+    color: #000;
+}
