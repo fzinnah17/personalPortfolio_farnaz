@@ -19,7 +19,7 @@ const Sidebar = () => {
     { ref: homeContainer, path: '/homepage.json', handler: () => handleScroll('home'), title: 'Home' },
     { ref: aboutMeContainer, path: '/aboutme.json', handler: () => handleScroll('about-me'), title: 'About Me' },
     { ref: projectsContainer, path: '/projects.json', handler: () => handleScroll('projects'), title: 'Projects' },
-    { ref: contactContainer, path: '/projects.json', handler: () => handleScroll('contact'), title: 'Contact' },
+    { ref: contactContainer, path: '/contactme.json', handler: () => handleScroll('contact'), title: 'Contact' },
     { ref: githubContainer, path: '/github.json', handler: () => handleExternalLinkClick('https://github.com/fzinnah17'), title: 'Github' },
     { ref: linkedinContainer, path: '/linkedin.json', handler: () => handleExternalLinkClick('https://www.linkedin.com/in/farnaz-zinnah/'), title: 'LinkedIn' },
     { ref: resumeContainer, path: '/resume.json', handler: () => handleExternalLinkClick('https://drive.google.com/file/d/1Ob2PkmUj22DiadrF4dFDjvHCkcD8Eoe9/view?usp=sharing'), title: 'Resume' },

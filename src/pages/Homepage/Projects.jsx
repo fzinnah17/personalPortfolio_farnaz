@@ -8,9 +8,6 @@ import './Projects.css';
 function Projects() {
   const [activeFilter, setActiveFilter] = useState('');
 
-  const handleFilterClick = (filter) => {
-    setActiveFilter(filter);
-  }
   const portfolioData = [
     {
       group: "group-1",
