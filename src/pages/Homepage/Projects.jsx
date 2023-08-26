@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import creatorverseImage from '../../assets/images/creatorverse.png';
+import facemaskImage from '../../assets/images/facemask.png';
+import gradschoolzeroImage from '../../assets/images/gradschoolzero.png';
+import taskterImage from '../../assets/images/taskter.png';
 import './Projects.css';
 
 function Projects() {
@@ -10,29 +14,29 @@ function Projects() {
   const portfolioData = [
     {
       group: "group-1",
-      imgSrc: "http://farm3.staticflickr.com/2675/4029465977_e0ec2d53c6_z.jpg?zz=1",
-      title: "Project 1",
+      imgSrc: creatorverseImage,
+      title: "Creatorverse",
       description: "This is the description for Project 1.",
       githubLink: "https://github.com/username/project-1"
     },
     {
       group: "group-2",
-      imgSrc: "http://farm1.staticflickr.com/212/461888176_cd0894c52c_z.jpg?zz=1",
-      title: "Project 2",
+      imgSrc: facemaskImage,
+      title: "Face Mask Detection",
       description: "This is the description for Project 2.",
       githubLink: "https://github.com/username/project-2"
     },
     {
       group: "group-2",
-      imgSrc: "http://farm1.staticflickr.com/212/461888176_cd0894c52c_z.jpg?zz=1",
-      title: "Project 2",
+      imgSrc: gradschoolzeroImage,
+      title: "Grad School Zero",
       description: "This is the description for Project 2.",
       githubLink: "https://github.com/username/project-2"
     },
     {
       group: "group-2",
-      imgSrc: "http://farm1.staticflickr.com/212/461888176_cd0894c52c_z.jpg?zz=1",
-      title: "Project 2",
+      imgSrc: taskterImage,
+      title: "TaskTer",
       description: "This is the description for Project 2.",
       githubLink: "https://github.com/username/project-2"
     },

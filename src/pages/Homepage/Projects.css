@@ -1,6 +1,7 @@
 .portfolio-img {
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
   display: block;
   transition: all .4s ease-in-out;
 }
@@ -16,6 +17,7 @@
 .project-wrap h1{
   text-align: center;
   font-size: 40px;
+  font-weight: bolder;
   padding-bottom: 20px;
 }
 .project-portfolio {
@@ -78,7 +80,6 @@
 
 .portfolio-link {
   background-color: #D29990;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   text-shadow: 0 -1px 1px #a47374;
   text-decoration: none;
@@ -104,7 +105,6 @@
 
 .portfolio-title {
   color: #fff;
-  font-family: Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
@@ -123,7 +123,6 @@
 
 .portfolio-description {
   color: #fff;
-  font-family: Helvetica, Arial, sans-serif;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
   font-weight: 300;
   position: absolute;
