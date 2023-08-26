@@ -41,6 +41,7 @@ function Projects() {
 
   return (
     <div className="project-wrap">
+      <h1> PROJECTS </h1>
       <ul className="project-portfolio">
         {portfolioData.map((item, index) => (
           <li

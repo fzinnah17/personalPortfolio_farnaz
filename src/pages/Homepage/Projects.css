@@ -10,9 +10,14 @@
   max-width: 1000px;
   margin: 0 auto;
   padding-left: 20px;
-  padding-top: 100px;
+  padding-top: 30px;
 }
 
+.project-wrap h1{
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
 .project-portfolio {
   margin: 0;
   overflow: hidden;

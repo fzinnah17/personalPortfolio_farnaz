@@ -4,13 +4,17 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin-top: -60px;
 }
 
 #content_footer_logotext {
-    padding-top: 50px;
+    text-align: center;
     z-index: 2;
     position: absolute;
     margin: 0;
     color: #000;
+    top: 65%;
+    left: 0;
+    right: 0;
 }
+

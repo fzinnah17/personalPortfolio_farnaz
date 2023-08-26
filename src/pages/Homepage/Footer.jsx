@@ -78,7 +78,7 @@ const config = {
   width: window.innerWidth,
   height: 100,
   amplitude: 5,
-  frequency: 0.7,
+  frequency: 0.8,
   fill: '#4779f7',
   stroke: 'transparent',
   strokeWidth: 0
