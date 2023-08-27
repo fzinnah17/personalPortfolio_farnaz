@@ -3,6 +3,7 @@ import creatorverseImage from '../../assets/images/creatorverse.png';
 import facemaskImage from '../../assets/images/facemask.png';
 import gradschoolzeroImage from '../../assets/images/gradschoolzero.png';
 import taskterImage from '../../assets/images/taskter.png';
+import githubImage from '../../assets/images/github.png';
 import './Projects.css';
 
 function Projects() {
@@ -50,22 +51,12 @@ function Projects() {
             className={item.group}
             style={{ display: (activeFilter && item.group !== activeFilter) ? 'none' : 'block' }}
           >
-            {/* <figure>
-              <img className="portfolio-img" src={item.imgSrc} alt="placeholder" />
-              <h3 className="portfolio-title">{item.title}</h3>
-              <p className="portfolio-description">{item.description}</p>
-              <figcaption>
-                <a href={item.githubLink} target="_blank" rel="noopener noreferrer" className="portfolio-link">
-                  <img src="path_to_github_icon.png" alt="GitHub" className="github-inner-icon" />
-                </a>
-              </figcaption>
-            </figure> */}
             <figure>
               <img className="portfolio-img" src={item.imgSrc} alt="placeholder" />
               <figcaption>
                 <h3 className="portfolio-title">{item.title}</h3>
                 <a href={item.githubLink} target="_blank" rel="noopener noreferrer" className="portfolio-link">
-                  <img src="path_to_github_icon.png" alt="GitHub" className="github-inner-icon" />
+                  <img src= {githubImage} alt="GitHub" className="github-inner-icon" />
                 </a>
                 <p className="portfolio-description">{item.description}</p>
               </figcaption>
