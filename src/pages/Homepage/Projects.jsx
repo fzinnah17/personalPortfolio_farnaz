@@ -14,28 +14,28 @@ function Projects() {
       imgSrc: creatorverseImage,
       title: "Creatorverse",
       description: "This is the description for Project 1.",
-      githubLink: "https://github.com/username/project-1"
+      githubLink: "https://github.com/fzinnah17/creatorverse"
     },
     {
       group: "group-2",
       imgSrc: facemaskImage,
       title: "Face Mask Detection",
       description: "This is the description for Project 2.",
-      githubLink: "https://github.com/username/project-2"
+      githubLink: "https://github.com/fzinnah17/FaceMaskDetection"
     },
     {
       group: "group-2",
       imgSrc: gradschoolzeroImage,
       title: "Grad School Zero",
       description: "This is the description for Project 2.",
-      githubLink: "https://github.com/username/project-2"
+      githubLink: "https://github.com/jvberdec/Project_TeamT_CSC322"
     },
     {
       group: "group-2",
       imgSrc: taskterImage,
       title: "TaskTer",
       description: "This is the description for Project 2.",
-      githubLink: "https://github.com/username/project-2"
+      githubLink: "https://github.com/nkhan-godaddy/taskTer"
     },
   ];
 
@@ -50,7 +50,7 @@ function Projects() {
             className={item.group}
             style={{ display: (activeFilter && item.group !== activeFilter) ? 'none' : 'block' }}
           >
-            <figure>
+            {/* <figure>
               <img className="portfolio-img" src={item.imgSrc} alt="placeholder" />
               <h3 className="portfolio-title">{item.title}</h3>
               <p className="portfolio-description">{item.description}</p>
@@ -59,7 +59,18 @@ function Projects() {
                   <img src="path_to_github_icon.png" alt="GitHub" className="github-inner-icon" />
                 </a>
               </figcaption>
+            </figure> */}
+            <figure>
+              <img className="portfolio-img" src={item.imgSrc} alt="placeholder" />
+              <figcaption>
+                <h3 className="portfolio-title">{item.title}</h3>
+                <a href={item.githubLink} target="_blank" rel="noopener noreferrer" className="portfolio-link">
+                  <img src="path_to_github_icon.png" alt="GitHub" className="github-inner-icon" />
+                </a>
+                <p className="portfolio-description">{item.description}</p>
+              </figcaption>
             </figure>
+
           </li>
         ))}
 
