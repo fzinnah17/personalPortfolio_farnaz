@@ -112,9 +112,9 @@
 }
 
 .portfolio-title {
-  color: #fff;
+  color: black;
   font-size: 30px;
-  font-weight: 300;
+  font-weight: bolder;
   text-transform: uppercase;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
   font-weight: 500;
@@ -130,19 +130,15 @@
 }
 
 .portfolio-description {
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-  font-weight: 300;
+  color: black;
+  font-weight: 700;
   position: relative;
-  bottom: auto;
-  left: auto;
-  width: auto;
   text-align: center;
   display: inline-block;
-  margin: 0;
   transition: all .15s ease-in-out .4s;
   opacity: 0; 
   visibility: hidden;
+  padding: 10px;
 }
 
 .project-portfolio figure:hover .portfolio-description {

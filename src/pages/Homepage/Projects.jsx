@@ -14,28 +14,28 @@ function Projects() {
       group: "group-1",
       imgSrc: creatorverseImage,
       title: "Creatorverse",
-      description: "This is the description for Project 1.",
+      description: "A React-built content curation platform, with PicoCSS aesthetics, streamlining creator discovery & management, reinforced by Supabase security.",
       githubLink: "https://github.com/fzinnah17/creatorverse"
     },
     {
       group: "group-2",
       imgSrc: facemaskImage,
       title: "Face Mask Detection",
-      description: "This is the description for Project 2.",
+      description: "Across Web, Android, and iOS platforms, harnesses ResNet10 and Single Shot Detector algorithms through TensorFlow, Keras, and OpenCV frameworks for real-time, high-accuracy face mask recognition.",
       githubLink: "https://github.com/fzinnah17/FaceMaskDetection"
     },
     {
       group: "group-2",
       imgSrc: gradschoolzeroImage,
       title: "Grad School Zero",
-      description: "This is the description for Project 2.",
+      description: "Web-based university management platform using advanced user roles for curricula access, course management, and feedback mechanisms, highlighting academic excellence and performance metrics.",
       githubLink: "https://github.com/jvberdec/Project_TeamT_CSC322"
     },
     {
       group: "group-2",
       imgSrc: taskterImage,
       title: "TaskTer",
-      description: "This is the description for Project 2.",
+      description: "A MERN-stack-driven marketplace app with intuitive UI facilitating task-based contracts for startups and freelancers, complemented by student academic trackers.",
       githubLink: "https://github.com/nkhan-godaddy/taskTer"
     },
   ];
