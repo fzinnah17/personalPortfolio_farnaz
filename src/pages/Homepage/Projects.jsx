@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import creatorverseImage from '../../assets/images/creatorverse.png';
 import facemaskImage from '../../assets/images/facemask.png';
 import gradschoolzeroImage from '../../assets/images/gradschoolzero.png';
@@ -8,6 +8,7 @@ import './Projects.css';
 
 function Projects() {
   const [activeFilter, setActiveFilter] = useState('');
+  const [projectsVisible, setProjectsVisible] = useState(false);
 
   const portfolioData = [
     {
@@ -40,9 +41,22 @@ function Projects() {
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const projectsSection = document.querySelector(".projects-section");
+      if (projectsSection) {
+        const projectsTop = projectsSection.getBoundingClientRect().top;
+        setProjectsVisible(projectsTop <= window.innerHeight * 0.75);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   return (
-    <div className="project-wrap">
+    <div className={`project-wrap ${projectsVisible ? 'fade-in-section is-visible' : 'fade-in-section'}`}>
       <h1> PROJECTS </h1>
       <ul className="project-portfolio">
         {portfolioData.map((item, index) => (

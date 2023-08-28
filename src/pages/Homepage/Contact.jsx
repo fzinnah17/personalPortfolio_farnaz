@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { app, db } from 'config/firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import "firebase/firestore";
@@ -11,6 +11,22 @@ const Contact = () => {
     message: ""
   });
   const [submitted, setSubmitted] = useState(false);
+  const [contactVisible, setContactVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const contactSection = document.querySelector(".contact-section");
+
+      if (contactSection) {
+        const contactTop = contactSection.getBoundingClientRect().top;
+        setContactVisible(contactTop <= window.innerHeight * 0.75);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   const fields = [
     { label: "Name", type: "text", key: "name" },
@@ -39,7 +55,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact_wrapper">
+    <div className={`contact_wrapper ${contactVisible ? 'fade-in-section is-visible' : 'fade-in-section'}`}>
       <div className="contact-box">
       <div className="contact_left">
               <img src="/path/to/your/image.jpg" alt="Your description here" /> 
