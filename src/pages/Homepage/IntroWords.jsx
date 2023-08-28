@@ -3,10 +3,8 @@ import { Text } from "components";
 import AnimatedPassionateText from "./AnimatedPassionateText.jsx";
 import "./IntroWords.css";
 
-
 const IntroWords = () => {
   const [showScrollDownArrow, setShowScrollDownArrow] = useState(true);
-  const [showScrollUpArrow, setShowScrollUpArrow] = useState(false);
   const [showAnimatedText, setShowAnimatedText] = useState(false);
 
   useEffect(() => {
@@ -14,58 +12,52 @@ const IntroWords = () => {
       const bottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight;
       setShowScrollDownArrow(!bottom);
-      setShowScrollUpArrow(bottom);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
-  useEffect(() => {
     const timeout = setTimeout(() => {
       setShowAnimatedText(true);
     }, 1500);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeout);
+    };
   }, []);
+
+  const greetings = ["world !", "fellows !", "everyone !", "recruiters !"];
 
   return (
     <div className="intro-container">
       <div className="intro-content intro-section">
         <div className="animation-container">
           <div className="section-container">
-            <div className="📦"></div>
-            <div className="📦"></div>
-            <div className="📦"></div>
-            <div className="📦"></div>
-            <div className="📦"></div>
+            {Array(5).fill(null).map((_, index) => <div key={index} className="📦"></div>)}
           </div>
         </div>
         <div className="intro-text">
-
           <div className="name-content">
             <div className="namecontent__container">
-              <p className="namecontent__container__text">
-                Hello,
-              </p>
+              <p className="namecontent__container__text">Hello,</p>
               <ul className="namecontent__container__list">
-                <li className="namecontent__container__list__item">world !</li>
-                <li className="namecontent__container__list__item">fellows !</li>
-                <li className="namecontent__container__list__item">everyone !</li>
-                <li className="namecontent__container__list__item">recruiters !</li>
+                {greetings.map(greeting => (
+                  <li key={greeting} className="namecontent__container__list__item">
+                    {greeting}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
-
           <div className="paragraph-container">
             <Text className="intro-description" variant="body2">
-              <span className="name-highlight"> Farnaz  </span>   here <img src="/images/farnaziPhone.png" alt="Waving Memoji" className="avatar" />
+              <span className="name-highlight">Farnaz</span> here{" "}
+              <img src="/images/farnaziPhone.png" alt="Waving Memoji" className="avatar" />
             </Text>
             <div className="animated-passionate-text">
               {showAnimatedText && <AnimatedPassionateText />}
             </div>
           </div>
-
           <button className="intro-contact">
             <span className="contact-text AnimatedText">SAY HI</span>
           </button>

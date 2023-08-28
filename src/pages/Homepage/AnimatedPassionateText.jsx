@@ -17,19 +17,8 @@ const AnimatedPassionateText = () => {
 
   return (
     <AnimatedText style={style}>
-      Passionate about crafting captivating and intuitive web experiences,
-      exceeding expectations is always the goal.
-      Passionate about crafting captivating and intuitive web experiences,
-      exceeding expectations is always the goal.
-      Passionate about crafting captivating and intuitive web experiences,
-      exceeding expectations is always the goal.
-      Passionate about crafting captivating and intuitive web experiences,
-      exceeding expectations is always the goal.
-      Passionate about crafting captivating and intuitive web experiences,
-      exceeding expectations is always the goal.
-      Passionate about crafting captivating and intuitive web experiences,
-      exceeding expectations is always the goal.
-      
+  Crafting code, shaping experiences.
+  A Computer Engineering graduate with a flair for full-stack development. Diving deep into frontend magic and backend logic, I bring solutions to life.      
     </AnimatedText>
   );
 };
