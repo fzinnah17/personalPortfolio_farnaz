@@ -133,9 +133,9 @@ const AboutMe = () => {
           <div className="about-description">
             <Text className="about-description-text" variant="body2">
               I am currently as a <b>Software Engineering Intern</b> at{" "}
-              <a href="https://www.aboutamazon.com/">Con Edison</a>, working in the Energy Services Team.
-              At the same time, I am undertaking a part-time <b>Master's of Science</b> in <b>Software Engineering</b> at{" "}
-              <a href="https://www.ox.ac.uk/about">The City College of New York</a>.
+              <a href="https://www.coned.com/en/">Con Edison</a>, working in the Energy Services Team.
+              At the same time, I am a <b>Web Development Tech Fellow</b> at{" "}
+              <a href="https://www.codepath.org/courses/web-development?utm_term=web%20development%20training&utm_campaign=Search_Web_Development_Paid_Tuff&utm_source=google_ads&utm_medium=ppc&hsa_acc=1387130392&hsa_cam=20442411038&hsa_grp=151633997945&hsa_ad=669245130454&hsa_src=g&hsa_tgt=kwd-10049561&hsa_kw=web%20development%20training&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwi7GnBhDXARIsAFLvH4nzG2qwUOYyOlWH1LXQkdknU8ndcVKAI1EMtkcOOwKyAbJii6zFH6caAiFuEALw_wcB">CodePath</a>.
             </Text>
 
             <HorizontalTimeline experiences={experiences} counter={counter} increment={increment} decrement={decrement} />

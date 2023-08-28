@@ -42,7 +42,7 @@ const HomePage = () => {
       const bottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
       setShowScrollDownArrow(!bottom);
       setShowScrollUpArrow(bottom);
-    }, 200);
+    }, 1200);
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

@@ -88,11 +88,10 @@ li:hover {
 /* Intro Page */
 
 
-/* .intro-section {
-  background-color: pink;
+.intro-section {
   background-size: cover;
   background-position: center;
-} */
+}
 
 
 .intro-section .section-container {

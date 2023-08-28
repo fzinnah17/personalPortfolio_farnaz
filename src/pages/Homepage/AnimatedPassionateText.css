@@ -1,9 +1,11 @@
 .animated-text {
+    height: 200px;
     font-size: 30px;
+    margin: 10px;
 }
 
 .fade-in-from-bottom {
-    animation: fadeInFromBottom 1.5s forwards 1.5s;
+    animation: fadeInFromBottom 3.5s forwards 3.5s;
     opacity: 0;
 }
 
