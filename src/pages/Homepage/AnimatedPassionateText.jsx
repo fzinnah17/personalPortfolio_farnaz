@@ -1,26 +1,36 @@
-import React, { useEffect } from "react";
-import { animated, useSpring } from 'react-spring';
+import React, { useEffect, useState } from "react";
 import { Text } from "components";
+import "./AnimatedPassionateText.css"
 
-const AnimatedText = animated(Text);
+const AnimatedText = Text; // Since you're not using animated anymore
+const AnimatedPassionateText = React.memo(() => {
+  const [currentText, setCurrentText] = useState("");
 
-const AnimatedPassionateText = () => {
-  const [style, set] = useSpring(() => ({ opacity: 0, y: 100 }));
+  const fullText = "Crafting code, shaping experiences. A Computer Engineering graduate with a flair for full-stack development. Diving deep into frontend magic and backend logic, I bring solutions to life.";
+  const delay = 90;
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      set({ opacity: 1, y: 0 });
-    }, 1500);
+    let textIndex = 0;
+    const interval = setInterval(() => {
+      if (textIndex < fullText.length) {
+        setCurrentText(prev => prev + fullText.charAt(textIndex));
+        textIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, delay);
 
-    return () => clearTimeout(timeout);
-  }, [set]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <AnimatedText style={style}>
-  Crafting code, shaping experiences.
-  A Computer Engineering graduate with a flair for full-stack development. Diving deep into frontend magic and backend logic, I bring solutions to life.      
+    <AnimatedText className="fade-in-from-bottom">
+      <div className="animated-text">
+        {currentText}
+      </div>
     </AnimatedText>
   );
-};
+});
+
 
 export default AnimatedPassionateText;
