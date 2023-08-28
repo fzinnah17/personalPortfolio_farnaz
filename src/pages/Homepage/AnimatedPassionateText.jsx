@@ -22,6 +22,10 @@ const AnimatedPassionateText = React.memo(() => {
 
     return () => clearInterval(interval);
   }, []);
+  useEffect(() => {
+    console.log("AnimatedPassionateText rendered!");
+  }, []);
+  
 
   return (
     <AnimatedText className="fade-in-from-bottom">

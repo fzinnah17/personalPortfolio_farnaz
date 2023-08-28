@@ -16,15 +16,20 @@ const IntroWords = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    const timeout = setTimeout(() => {
-      setShowAnimatedText(true);
-    }, 1500);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      clearTimeout(timeout);
     };
   }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (!showAnimatedText) {
+        setShowAnimatedText(true);
+      }
+    }, 1500);
+
+    return () => clearTimeout(timeout);
+  }, [showAnimatedText]);
 
   const greetings = ["world !", "fellows !", "everyone !", "recruiters !"];
 
@@ -54,9 +59,10 @@ const IntroWords = () => {
               <span className="name-highlight">Farnaz</span> here{" "}
               <img src="/images/farnaziPhone.png" alt="Waving Memoji" className="avatar" />
             </Text>
-            <div className="animated-passionate-text">
-              {showAnimatedText && <AnimatedPassionateText />}
+            <div className="animated-passionate-text" style={{ opacity: showAnimatedText ? 1 : 0 }}>
+              <AnimatedPassionateText />
             </div>
+
           </div>
           <button className="intro-contact">
             <span className="contact-text AnimatedText">SAY HI</span>
