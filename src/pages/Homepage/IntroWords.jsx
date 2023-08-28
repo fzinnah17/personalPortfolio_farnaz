@@ -3,7 +3,7 @@ import { Text } from "components";
 import AnimatedPassionateText from "./AnimatedPassionateText.jsx";
 import "./IntroWords.css";
 
-const IntroWords = () => {
+const IntroWords = (props) => {
   const [showScrollDownArrow, setShowScrollDownArrow] = useState(true);
   const [showAnimatedText, setShowAnimatedText] = useState(false);
 
@@ -30,6 +30,15 @@ const IntroWords = () => {
 
     return () => clearTimeout(timeout);
   }, [showAnimatedText]);
+
+  const handleSayHiClick = () => {
+    if (props.contactRef.current) {
+      props.contactRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
   const greetings = ["world !", "fellows !", "everyone !", "recruiters !"];
 
@@ -64,7 +73,7 @@ const IntroWords = () => {
             </div>
 
           </div>
-          <button className="intro-contact">
+          <button className="intro-contact" onClick={handleSayHiClick}>
             <span className="contact-text AnimatedText">SAY HI</span>
           </button>
         </div>
