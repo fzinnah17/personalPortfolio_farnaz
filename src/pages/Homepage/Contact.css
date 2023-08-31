@@ -1,65 +1,67 @@
 .contact_wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 50px;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
-  .fade-in-section {
-    opacity: 0;
-    transition: opacity 0.5s;
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .fade-in-section.is-visible {
-    opacity: 1;
+  opacity: 1;
 }
 
-  
-  body[data-theme='dark'] .contact_content {
-    color: white;
-    background: #221F2E;
-  }
-  
-  body[data-theme='light'] .contact_content {
-    color: black;
-    background: linear-gradient(135deg, #58a497, #2db8e7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.1);
-  }
 
-  .contact-box {
-    display: flex;
-    width: 60%;
-    margin: 0 auto;
-    box-shadow: 0 2.5px 5px #ccc;
-    border-radius: 25px;
-    overflow: hidden; 
+body[data-theme='dark'] .contact_content {
+  color: white;
+  background: #221F2E;
+}
+
+body[data-theme='light'] .contact_content {
+  color: black;
+  background: linear-gradient(135deg, #58a497, #2db8e7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+.contact-box {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: 0 2.5px 5px #ccc;
+  border-radius: 25px;
+  overflow: hidden;
 }
 
 .contact_left {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center; /* center the image/animation */
-  background-color: #DAE5ED; /* you can adjust this */
+  justify-content: center;
+  /* center the image/animation */
+  background-color: #DAE5ED;
+  /* you can adjust this */
   padding: 25px;
-  border-radius: 25px 0 0 25px; 
+  border-radius: 25px 0 0 25px;
 }
 
-  
-  .contact_right {
-    flex: 2;  /* takes twice the space of contact_left */
-    border-radius: 0 25px 25px 0;
-    width: 30%;
-    padding: 25px;
-    color: white;
-    /* background: radial-gradient( circle at 55% 92%, #426691 0 12%, transparent 12.2% ), radial-gradient( circle at 94% 72%, #426691 0 10%, transparent 10.2% ), radial-gradient( circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2% ), radial-gradient( circle at 0% 0%, #263a53 0 40%, transparent 40.2% ), #1f2e43; */
-    background:
+.contact_right {
+  flex: 2;
+  /* takes twice the space of contact_left */
+  border-radius: 0 25px 25px 0;
+  width: 30%;
+  padding: 25px;
+  color: white;
+  /* background: radial-gradient( circle at 55% 92%, #426691 0 12%, transparent 12.2% ), radial-gradient( circle at 94% 72%, #426691 0 10%, transparent 10.2% ), radial-gradient( circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2% ), radial-gradient( circle at 0% 0%, #263a53 0 40%, transparent 40.2% ), #1f2e43; */
+  background:
     /* Big Circle */
     radial-gradient(circle at 50% 50%, #6B9DC2 0 12%, transparent 12.2%),
-    
+
     /* Medium Circles */
     radial-gradient(circle at 20% 20%, #7AA9B5 0 9%, transparent 9.2%),
     radial-gradient(circle at 70% 30%, #E0B28D 0 9%, transparent 9.2%),
@@ -70,86 +72,88 @@
     radial-gradient(circle at 40% 60%, #A5C5D0 0 5%, transparent 5.2%),
     radial-gradient(circle at 80% 90%, #8AB0C1 0 4%, transparent 4.2%),
     radial-gradient(circle at 95% 20%, #A6BFD7 0 5%, transparent 5.2%),
-    
+
     /* Rectangles */
     linear-gradient(to right, #B8D1DB 20%, transparent 30%, #B8D1DB 70%),
     linear-gradient(to bottom, #E5C8A8 15%, transparent 25%, #E5C8A8 75%),
     linear-gradient(to top, #B4D7B2 10%, transparent 20%, #B4D7B2 70%),
-    
+
     /* Triangles using conic gradient */
     conic-gradient(#B4D7B2 0% 10%, transparent 10% 20%, #E0B28D 20% 30%, transparent 30% 40%),
     conic-gradient(#92BAD5 0% 5%, transparent 5% 10%, #A5C5D0 10% 15%, transparent 15% 20%, #9BBDD4 20% 25%, transparent 25% 30%),
 
-    #DAE5ED; /* Adjusted base background to a more muted baby blue */
-    position: relative;
+    #DAE5ED;
+  /* Adjusted base background to a more muted baby blue */
+  position: relative;
   overflow: hidden;
 
+}
+
+.contact_right h1 {
+  text-align: center;
+  font-size: larger;
+  margin-bottom: 20px;
+}
+
+.contact_grid-35 {
+  width: 35%;
+}
+
+.contact_grid-65 {
+  width: 65%;
+  display: flex;
+  align-items: center;
+}
+
+fieldset {
+  display: flex;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+input,
+textarea {
+  width: -webkit-fill-available;
+  padding: 8px;
+  margin: 8px 0;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  resize: none;
+}
+
+.contact_buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact_Btn {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, #00dbde, #fc00ff, #fc00ff, #00dbde);
+  background-size: 400%;
+  animation: effect 10s linear infinite;
+}
+
+@keyframes effect {
+  0% {
+    background-position: 0 0;
   }
-  
-  .contact_right h1 {
-    text-align: center;
-    font-size: larger;
-    margin-bottom: 20px;
+
+  100% {
+    background-position: 400% 0;
   }
-  
-  .contact_grid-35 {
-    width: 35%;
-  }
-  
-  .contact_grid-65 {
-    width: 65%;
-    display: flex;
-    align-items: center;
-  }
-  
-  fieldset {
-    display: flex;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  label {
-    display: flex;
-    align-items: center;
-  }
-  
-  input, textarea {
-    width: -webkit-fill-available;
-    padding: 8px;
-    margin: 8px 0;
-    color: black;
-    border: 1px solid black;
-    border-radius: 10px;
-    resize: none;
-  }
-  
-  .contact_buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .contact_Btn {
-    position: relative;
-    width: 150px;
-    height: 40px;
-    margin: 10px;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    background: linear-gradient(90deg, #00dbde, #fc00ff, #fc00ff, #00dbde);
-    background-size: 400%;
-    animation: effect 10s linear infinite;
-  }
-  
-  @keyframes effect {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 400% 0;
-    }
-  }
-  
+}

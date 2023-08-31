@@ -161,7 +161,7 @@ const AboutMe = () => {
           </div>
           <div className="about-image">
             <Img
-              src="/images/rimi.jpeg"
+              src="/images/farnaz.jpeg"
               className="about-img"
               alt="About Me"
             />

@@ -19,13 +19,14 @@ const Contact = () => {
 
       if (contactSection) {
         const contactTop = contactSection.getBoundingClientRect().top;
-        setContactVisible(contactTop <= window.innerHeight * 0.75);
+        const isVisible = contactTop <= window.innerHeight * 0.75;
+        setContactVisible(isVisible);      
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+  }, []);
 
 
   const fields = [
@@ -57,45 +58,41 @@ const Contact = () => {
   return (
     <div className={`contact_wrapper ${contactVisible ? 'fade-in-section is-visible' : 'fade-in-section'}`}>
       <div className="contact-box">
-      <div className="contact_left">
-              <img src="/path/to/your/image.jpg" alt="Your description here" /> 
-              {/* Or replace the img tag with your animation component */}
-          </div>
-          <div className="contact_right">
-            <h1>Contact</h1>
-            {submitted ? (
-              <p>Thanks for reaching out! I'll get back to you soon.</p>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                {fields.map((field) => (
-                  <fieldset key={field.key}>
-                    <div className="contact_grid-35">
-                      <label>{field.label}:</label>
-                    </div>
-                    <div className="contact_grid-65">
-                      {field.type === "textarea" ? (
-                        <textarea
-                          value={formData[field.key]}
-                          onChange={(e) => handleChange(e, field.key)}
-                          required
-                        />
-                      ) : (
-                        <input
-                          type={field.type}
-                          value={formData[field.key]}
-                          onChange={(e) => handleChange(e, field.key)}
-                          required
-                        />
-                      )}
-                    </div>
-                  </fieldset>
-                ))}
-                <div className="contact_buttons">
-                  <button type="submit" className="contact_Btn">Submit</button>
-                </div>
-              </form>
-            )}
-          </div>
+        <div className="contact_right">
+          <h1>Contact</h1>
+          {submitted ? (
+            <p>Thanks for reaching out! I'll get back to you soon.</p>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              {fields.map((field) => (
+                <fieldset key={field.key}>
+                  <div className="contact_grid-35">
+                    <label>{field.label}:</label>
+                  </div>
+                  <div className="contact_grid-65">
+                    {field.type === "textarea" ? (
+                      <textarea
+                        value={formData[field.key]}
+                        onChange={(e) => handleChange(e, field.key)}
+                        required
+                      />
+                    ) : (
+                      <input
+                        type={field.type}
+                        value={formData[field.key]}
+                        onChange={(e) => handleChange(e, field.key)}
+                        required
+                      />
+                    )}
+                  </div>
+                </fieldset>
+              ))}
+              <div className="contact_buttons">
+                <button type="submit" className="contact_Btn">Submit</button>
+              </div>
+            </form>
+          )}
+        </div>
       </div>
     </div>
   );
