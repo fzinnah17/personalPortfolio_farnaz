@@ -1,44 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, memo } from "react";
 import { Text } from "components";
 import AnimatedPassionateText from "./AnimatedPassionateText.jsx";
 import "./IntroWords.css";
 
-const IntroWords = (props) => {
-  const [showScrollDownArrow, setShowScrollDownArrow] = useState(true);
+const IntroWords = memo(({ contactRef, showScrollDownArrow }) => {
   const [showAnimatedText, setShowAnimatedText] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const bottom =
-        window.innerHeight + window.scrollY >= document.body.offsetHeight;
-      setShowScrollDownArrow(!bottom);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
     const timeout = setTimeout(() => {
-      if (!showAnimatedText) {
-        setShowAnimatedText(true);
-      }
+      setShowAnimatedText(true);
     }, 1500);
 
     return () => clearTimeout(timeout);
-  }, [showAnimatedText]);
+  }, []);
 
-  const handleSayHiClick = () => {
-    if (props.contactRef.current) {
-      props.contactRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+  const handleSayHiClick = useCallback(() => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  };
+  }, [contactRef]);
 
   const greetings = ["world !", "fellows !", "everyone !", "recruiters !"];
 
@@ -47,7 +27,9 @@ const IntroWords = (props) => {
       <div className="intro-content intro-section">
         <div className="animation-container">
           <div className="section-container">
-            {Array(5).fill(null).map((_, index) => <div key={index} className="📦"></div>)}
+            {Array.from({ length: 5 }, (_, index) => (
+              <div key={index} className="📦"></div>
+            ))}
           </div>
         </div>
         <div className="intro-text">
@@ -55,7 +37,7 @@ const IntroWords = (props) => {
             <div className="namecontent__container">
               <p className="namecontent__container__text">Hello,</p>
               <ul className="namecontent__container__list">
-                {greetings.map(greeting => (
+                {greetings.map((greeting) => (
                   <li key={greeting} className="namecontent__container__list__item">
                     {greeting}
                   </li>
@@ -71,7 +53,6 @@ const IntroWords = (props) => {
             <div className="animated-passionate-text" style={{ opacity: showAnimatedText ? 1 : 0 }}>
               <AnimatedPassionateText />
             </div>
-
           </div>
           <button className="intro-contact" onClick={handleSayHiClick}>
             <span className="contact-text AnimatedText">SAY HI</span>
@@ -80,6 +61,6 @@ const IntroWords = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default IntroWords;
