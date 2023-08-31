@@ -3,7 +3,7 @@ import { Text } from "components";
 import AnimatedPassionateText from "./AnimatedPassionateText.jsx";
 import "./IntroWords.css";
 
-const IntroWords = memo(({ contactRef, showScrollDownArrow }) => {
+const IntroWords = ({ contactRef }) => {
   const [showAnimatedText, setShowAnimatedText] = useState(false);
 
   useEffect(() => {
@@ -14,11 +14,11 @@ const IntroWords = memo(({ contactRef, showScrollDownArrow }) => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const handleSayHiClick = useCallback(() => {
+  const handleSayHiClick = () => {
     if (contactRef.current) {
       contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  }, [contactRef]);
+  };
 
   const greetings = ["world !", "fellows !", "everyone !", "recruiters !"];
 
@@ -61,6 +61,6 @@ const IntroWords = memo(({ contactRef, showScrollDownArrow }) => {
       </div>
     </div>
   );
-});
+};
 
 export default IntroWords;
