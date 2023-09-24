@@ -1,4 +1,4 @@
-.timeline::-webkit-scrollbar {
+/* .timeline::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
@@ -17,7 +17,6 @@
 }
 
 .timeline .events-wrapper::before {
-  /*line at the bottom of the timeline*/
   content: '';
   position: absolute;
   top: calc(50% - 2px);
@@ -35,7 +34,6 @@
 }
 
 .timeline .filling-line {
-  /*colored line showing the progress on the timeline*/
   width: calc((100% / (4 - 1)) * counter);
   position: absolute;
   top: calc(50% - 2px);
@@ -57,7 +55,6 @@
 }
 
 .timeline .events a::after {
-  /* circle marker for the horizontal timeline. */
   content: '';
   position: absolute;
   left: 50%;
@@ -69,17 +66,12 @@
   background-color: white;
   border: 2px solid #30353C;
   border-radius: 50%;
-
-  /* Hide the circle marker by default */
   opacity: 0;
   transform: scale(0);
 }
 
 .timeline .events a.selected {
-  /* selected event */
   opacity: 1;
-
-  /* Show the circle marker after it's selected */
   &::after {
     bottom: calc(60% + 10px);
     transition: bottom 0.5s ease-out;
@@ -87,7 +79,110 @@
     opacity: 1;
     transform: scale(1);
   }
+} */
+
+.timeline::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
+
+.timeline {
+  position: relative;
+  width: 100%;
+  padding: 1em 0;
+  overflow: hidden;
+}
+
+.timeline .events-wrapper {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  transition: transform 0.4s ease-in-out; /* Add transition */
+}
+
+.timeline .events-wrapper::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: #DFDFDF;
+}
+
+.timeline .events {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.timeline .filling-line {
+  width: calc((100% / (4 - 1)) * counter); /* Use your logic to set 'counter' */
+  position: absolute;
+  top: calc(50% - 2px);
+  height: 4px;
+  background-color: #F1C40F;
+  will-change: transform;
+  transition: transform 0.3s;
+}
+
+.timeline .events a {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #30353C;
+  opacity: .7;
+  transition: opacity .3s;
+  will-change: opacity;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+}
+
+.timeline .events a.selected {
+  opacity: 1;
+}
+
+.timeline .events a.selected::after {
+  content: '';
+  position: absolute;
+  bottom: calc(60% + 10px);
+  transition: bottom 0.5s ease-out;
+  background-color: #F1C40F;
+  border-radius: 50%;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.timeline .events a span {
+  display: block;
+  margin: 0;
+  padding-bottom: 0.2em;
+}
+
+.timeline .events a .company-label {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  margin-top: 0.2em;
+}
+
+.timeline .events a .circle {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #DFDFDF;
+  border-radius: 50%;
+  margin-bottom: 4px;
+}
+
+.timeline .events a.selected .circle {
+  background-color: #F1C40F;
+}
+
 
 .cd-timeline-navigation {
   position: absolute;

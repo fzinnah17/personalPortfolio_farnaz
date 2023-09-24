@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, useRef, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineKeyboardDoubleArrowDown, MdOutlineKeyboardDoubleArrowUp } from 'react-icons/md';
 import throttle from 'lodash/throttle';
-import IntroWords from "./IntroWords";
+import Landing from "./Landing";
 import Sidebar from "./Sidebar";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
@@ -11,7 +11,6 @@ import Footer from "./Footer";
 
 
 // Using React.memo to optimize child components
-const MemoizedIntroWords = memo(IntroWords);
 const MemoizedAboutMe = memo(AboutMe);
 const MemoizedProjects = memo(Projects);
 const MemoizedContact = memo(Contact);
@@ -23,7 +22,7 @@ const HomePage = () => {
   const contactRef = useRef(null);
   //assigning different properties to the sections Array
   const sections = [
-    { className: 'intro-section', id: 'home', content: <MemoizedIntroWords contactRef={contactRef} />, minHeight: '100vh' },
+    { className: 'landing-section', id: 'home', content: <Landing  />, minHeight: '100vh' },
     { className: 'about-me-section', id: 'about-me', content: <MemoizedAboutMe />, minHeight: '115vh' },
     { className: 'projects-section', id: 'projects', content: <MemoizedProjects />, minHeight: '100vh' },
     { className: 'contact-section', id: 'contact', content: <MemoizedContact />, minHeight: '60vh' },
@@ -94,6 +93,7 @@ const HomePage = () => {
         </div>
       )}
       {/* mapping over the sections and rendering them, pass the props */}
+      <div className="app-wrapper">
       {sections.map(section => (
         <section
           key={section.id}
@@ -105,6 +105,7 @@ const HomePage = () => {
           {section.content}
         </section>
       ))}
+      </div>
       <Sidebar />
       <div className="fixed bottom-10 right-10 z-50">
         {showScrollDownArrow && (

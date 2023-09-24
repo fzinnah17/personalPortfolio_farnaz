@@ -1,33 +1,40 @@
-.intro-container {
+/* .intro-container {
   height: calc(100vh);
   margin: auto;
   position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .intro-content {
   height: 100%;
   margin-left: auto;
   right: 0;
+  border-left: 5px solid #A7D6AA;
+    padding-left: 40px;
   padding-right: 60px;
   width: 55%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  gap: 100px;
 }
 
 .intro-text {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  color: #99C5CC;
 }
 
 .intro-heading {
   font-size: 50px;
+  font-weight: bold;
   text-align: right;
   color: #000;
-
 }
 
 .paragraph-container {
@@ -40,6 +47,7 @@
   text-align: right;
   margin-top: 40px;
   font-size: 35px;
+  font-weight: bold;
   line-height: 1.43;
   font-style: normal;
   color: #000;
@@ -80,6 +88,8 @@
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
   position: relative;
+  border-color: #B5DDD0;
+  color: #99C5CC;
 }
 
 .intro-contact:before {
@@ -93,6 +103,7 @@
   border-radius: 8px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  background-color: #D3F0C5;
 }
 
 .intro-contact:hover:before {
@@ -137,32 +148,32 @@
 @keyframes changeColor {
   0% {
     color: #FFFFFF;
-    /* White */
+
   }
 
   20% {
     color: #FF0000;
-    /* Red */
+
   }
 
   40% {
     color: #00FF00;
-    /* Green */
+  
   }
 
   60% {
     color: #0000FF;
-    /* Blue */
+
   }
 
   80% {
     color: #FFFF00;
-    /* Yellow */
+  
   }
 
   100% {
     color: #FFFFFF;
-    /* White */
+
   }
 }
 
@@ -173,4 +184,4 @@
 .bold-text {
   font-weight: bolder;
 }
-
+ */
