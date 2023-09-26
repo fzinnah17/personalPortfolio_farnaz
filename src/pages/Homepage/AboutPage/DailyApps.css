@@ -1,0 +1,11 @@
+/* DailyApps.css */
+.daily-apps-container {
+    background-color: #8fbc8f;
+    border: 5px solid #001f3f;
+    border-radius: 25px;
+    height: 390px;
+    position: absolute;
+    top: 547px;
+    width: 436px;
+    left: 185px;
+}

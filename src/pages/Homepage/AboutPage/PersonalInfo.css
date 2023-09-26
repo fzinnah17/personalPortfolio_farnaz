@@ -1,0 +1,150 @@
+/* .personal-info-container {
+    height: 435px;
+    width: 577px;
+    position: relative;
+}
+
+.name-text {
+    color: #b91646;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-size: 44px;
+    font-weight: 800;
+    left: 54px;
+    letter-spacing: 0;
+    line-height: 41.6px;
+    position: absolute;
+    text-align: center;
+    top: 17px;
+    white-space: nowrap;
+    width: 481px;
+}
+
+.graduation-icon {
+    height: 45px;
+    left: 37px;
+    position: absolute;
+    top: 87px;
+    width: 45px;
+}
+
+.college-text {
+    color: #000000;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 36px;
+    font-weight: 400;
+    left: 48px;
+    letter-spacing: 0;
+    line-height: 41.6px;
+    position: absolute;
+    text-align: center;
+    top: 89px;
+    width: 504px;
+}
+
+.job-icon {
+    height: 44px;
+    left: 38px;
+    position: absolute;
+    top: 165px;
+    width: 44px;
+}
+
+.job-text {
+    color: #000000;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 36px;
+    font-weight: 400;
+    left: 197px;
+    letter-spacing: 0;
+    line-height: 41.6px;
+    position: absolute;
+    text-align: center;
+    top: 164px;
+    white-space: nowrap;
+} */
+
+
+/* PersonalDetails.css */
+.personal-details-container {
+    background-color: #faf3e0;
+    border: 5px solid #001f3f;
+    border-radius: 25px;
+    height: 435px;
+    position: relative;
+    width: 575px;
+}
+
+.name-text {
+    color: #b91646;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-size: 44px;
+    font-weight: 800;
+    left: 54px;
+    letter-spacing: 0;
+    line-height: 41.6px;
+    position: absolute;
+    text-align: center;
+    top: 17px;
+    white-space: nowrap;
+    width: 481px;
+}
+
+.college-detail {
+    height: 42px;
+    left: 32px;
+    position: absolute;
+    top: 85px;
+    width: 517px;
+}
+
+.college-name {
+    color: #000000;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 36px;
+    font-weight: 400;
+    left: 11px;
+    letter-spacing: 0;
+    line-height: 41.6px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 504px;
+}
+
+.graduation-cap {
+    height: 39px;
+    left: 0;
+    position: absolute;
+    top: 1px;
+    width: 45px;
+}
+
+.job-detail {
+    height: 44px;
+    left: 33px;
+    position: absolute;
+    top: 160px;
+    width: 343px;
+}
+
+.job-name {
+    color: #000000;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 36px;
+    font-weight: 400;
+    left: 159px;
+    letter-spacing: 0;
+    line-height: 41.6px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    white-space: nowrap;
+}
+
+.employee-line-icon {
+    height: 44px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 44px;
+}

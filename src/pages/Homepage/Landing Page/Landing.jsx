@@ -3,12 +3,11 @@ import { HeaderSection } from "./HeaderSection"; // Assuming they are in the sam
 import { DescriptionSection } from "./DescriptionSection";
 import "./Landing.css"
 
-const Landing = () => {
+const Landing = ({ contactRef }) => {
     return (
         <div className="landing-container">
             <HeaderSection />
-            <DescriptionSection />
-            {/* ... any other components or content you might have ... */}
+            <DescriptionSection contactRef={contactRef} />
         </div>
     );
 }

@@ -1,9 +1,0 @@
-.landing-container {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 1024px;
-    position: relative;
-}

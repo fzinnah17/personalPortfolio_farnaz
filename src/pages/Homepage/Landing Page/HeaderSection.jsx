@@ -2,16 +2,16 @@
 // import "./HeaderSection.css";
 
 // export const HeaderSection = () => {
-//     const [greetingsIndex, setGreetingsIndex] = useState(0);
-//     const greetings = ["world !", "fellows !", "everyone !", "recruiters !"];
+    // const [greetingsIndex, setGreetingsIndex] = useState(0);
+    // const greetings = ["world !", "fellows !", "everyone !", "recruiters !"];
 
-//     useEffect(() => {
-//         const interval = setInterval(() => {
-//             setGreetingsIndex((prevIndex) => (prevIndex + 1) % greetings.length);
-//         }, 1500);  // Switch greeting every 1.5 seconds
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setGreetingsIndex((prevIndex) => (prevIndex + 1) % greetings.length);
+    //     }, 1500);  // Switch greeting every 1.5 seconds
 
-//         return () => clearInterval(interval);  // Cleanup the interval on component unmount
-//     }, []);
+    //     return () => clearInterval(interval);  // Cleanup the interval on component unmount
+    // }, []);
 
 //     return (
 //         <div className="header-label">
@@ -38,8 +38,8 @@ import React from "react";
 import "./HeaderSection.css";
 
 export const HeaderSection = () => {
-    const greetings = ["world !", "fellows !", "everyone !", "recruiters !"];
-
+    const greetings = ["recruiters !", "fellows !", "everyone !", "world !"];
+    
     return (
         <>
          <div className="header-content-wrapper">
