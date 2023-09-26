@@ -1,28 +1,4 @@
-/* PersonalImage.css */
-.profile-pic-container {
-    height: 436px;
-    width: 436px;
-    position: relative;
-}
-
-.image-default {
-    position: absolute;
-    left: 0;
-    top: 20px;
-    /* Assuming the image default will be the same as `rectangle-1-default` */
-    /* Additional styles would go here */
-}
-
-.image-variant {
-    position: absolute;
-    left: 20px;
-    top: 0;
-    /* Assuming the image variant will be the same as `rectangle-1-variant-2` */
-    /* Additional styles would go here */
-}
-
-.profile-pic-container:hover {
+ .profile-pic-container:hover {
     transform: translateY(-5px);
     transition: transform 0.3s ease;
 }
-

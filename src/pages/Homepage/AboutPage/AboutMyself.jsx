@@ -9,10 +9,14 @@ function AboutMyself() {
     return (
         <div className="about-myself-page">
             <div className="about-myself-div">
-                <NetworkingEvents />
+                <div className="image-container">
+                    <ProfilePic />
+                </div>
+                <div className="about-me-container">
+                    <PersonalInfo />
+                </div>
                 <DailyApps />
-                <PersonalInfo />
-                <ProfilePic />
+                <NetworkingEvents />
             </div>
         </div>
     );

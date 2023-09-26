@@ -1,11 +1,4 @@
-/* AboutMe.css */
-.about-myself-page {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
+
 
 .about-myself-div {
     background-color: #ffffff;
@@ -13,3 +6,18 @@
     position: relative;
     width: 1440px;
 }
+
+.image-container {
+    height: 400px;
+    width: 336px;
+}
+
+.about-me-container {
+    height: 435px;
+    left: 660px;
+    position: absolute;
+    top: 53px;
+    width: 577px;
+}
+
+
