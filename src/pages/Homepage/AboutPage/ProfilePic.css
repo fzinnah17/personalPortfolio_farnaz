@@ -1,4 +1,9 @@
- .profile-pic-container:hover {
+.image-container img{
+    border-radius: 25px;
+    border: 5px solid #001f3f;
+}
+
+.image-container:hover {
     transform: translateY(-5px);
     transition: transform 0.3s ease;
 }

@@ -69,24 +69,17 @@
     background-color: #faf3e0;
     border: 5px solid #001f3f;
     border-radius: 25px;
-    height: 435px;
-    position: relative;
-    width: 575px;
+    height: 335px;
+    width: 400px;
 }
 
 .name-text {
     color: #b91646;
     font-family: "Roboto-ExtraBold", Helvetica;
-    font-size: 44px;
+    font-size: 26px;
     font-weight: 800;
-    left: 54px;
-    letter-spacing: 0;
-    line-height: 41.6px;
     position: absolute;
-    text-align: center;
     top: 17px;
-    white-space: nowrap;
-    width: 481px;
 }
 
 .college-detail {
@@ -100,7 +93,7 @@
 .college-name {
     color: #000000;
     font-family: "Roboto-Regular", Helvetica;
-    font-size: 36px;
+    font-size: 22px;
     font-weight: 400;
     left: 11px;
     letter-spacing: 0;
@@ -130,7 +123,7 @@
 .job-name {
     color: #000000;
     font-family: "Roboto-Regular", Helvetica;
-    font-size: 36px;
+    font-size: 22px;
     font-weight: 400;
     left: 159px;
     letter-spacing: 0;

@@ -1,5 +1,3 @@
-
-
 .about-myself-div {
     background-color: #ffffff;
     height: 1024px;
@@ -8,16 +6,13 @@
 }
 
 .image-container {
-    height: 400px;
     width: 336px;
 }
 
 .about-me-container {
-    height: 435px;
-    left: 660px;
+    left: 375px;
     position: absolute;
-    top: 53px;
-    width: 577px;
+    top: 0.5px;
 }
 
 
