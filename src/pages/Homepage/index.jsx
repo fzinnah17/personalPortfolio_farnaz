@@ -9,11 +9,13 @@ import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import ExperienceSection from "./ExperiencePage/ExperienceSection";
 
 
 // Using React.memo to optimize child components
 const MemoizedLanding = memo(Landing);
 const MemoizedAboutMyself = memo(AboutMyself);
+const MemoizedExperience = memo(ExperienceSection);
 const MemoizedProjects = memo(Projects);
 const MemoizedContact = memo(Contact);
 const MemoizedFooter = memo(Footer);
@@ -26,6 +28,7 @@ const HomePage = () => {
   const sections = [
     { className: 'landing-section', id: 'home', content: <MemoizedLanding contactRef={contactRef}/> , minHeight: '100vh' },
     { className: 'about-me-section', id: 'about-me', content: <MemoizedAboutMyself />, minHeight: '115vh' },
+    { className: 'experience-section', id: 'experience', content: <MemoizedExperience />, minHeight: '100vh' },
     { className: 'projects-section', id: 'projects', content: <MemoizedProjects />, minHeight: '100vh' },
     { className: 'contact-section', id: 'contact', content: <MemoizedContact />, minHeight: '60vh' },
     { className: 'footer-section', id: 'footer', content: <MemoizedFooter />, minHeight: '5vh' }

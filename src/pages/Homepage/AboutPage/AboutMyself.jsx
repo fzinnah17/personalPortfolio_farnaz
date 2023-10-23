@@ -1,7 +1,6 @@
 import React from 'react';
 import ProfilePic from './ProfilePic';
 import PersonalInfo from './PersonalInfo';
-import DailyApps from './DailyApps';
 import NetworkingEvents from './NetworkingEvents';
 import './AboutMyself.css';
 
@@ -15,7 +14,6 @@ function AboutMyself() {
                 <div className="about-me-container">
                     <PersonalInfo />
                 </div>
-                <DailyApps />
                 <NetworkingEvents />
             </div>
         </div>
