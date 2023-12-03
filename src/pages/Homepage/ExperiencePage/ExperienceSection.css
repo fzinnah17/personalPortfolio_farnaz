@@ -48,34 +48,35 @@
 }
 
 .role-duration {
-  height: 92px;
-  width: 462px;
-  position: relative;
-}
-
-.role-duration .role-and-duration {
   background-color: #e6beb5;
   border-radius: 30px;
   height: 92px;
-  width: 462px;
+  width: 400px;
+  position: relative;
+  top: 6px;
+  left: 30px;
+}
+
+.role-duration .role-and-duration {
   color: #000000;
   font-family: "Roboto-Medium", Helvetica;
-  font-size: 25px;
-  font-weight: 400;
   position: absolute;
-  top: 6px;
-  left: 21px;
   line-height: 41.6px;
+  left: 15px;
 }
 
 .role-duration .role-company {
   font-weight: 500;
+  font-size: 18px;
 }
 
-.role-duration span {
-  font-family: "Roboto-Regular", Helvetica;
-  font-size: 20px;
+.role-duration .role-time {
+  font-size: 15px;
 }
+
+/* .role-duration span {
+  font-family: "Roboto-Regular", Helvetica;
+} */
 
 /* .responsibility-item {
   list-style: none;

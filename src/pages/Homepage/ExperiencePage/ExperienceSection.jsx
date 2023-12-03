@@ -78,7 +78,9 @@ function ExperienceSection() {
                   {experiences[selectedExperience].position} @ {experiences[selectedExperience].company}
                   <br />
                 </span>
+                <span className="role-time">
                 {experiences[selectedExperience].duration}
+                </span>
               </div>
           </div>
           <div className="responsibility-list">
