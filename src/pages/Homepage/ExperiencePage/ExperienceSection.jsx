@@ -1,9 +1,8 @@
-import React from 'react';
-
-// Experience data as an array of objects
+import React, { useState } from 'react';
+import "./ExperienceSection.css";
 const experiences = [
   {
-    company: "Amazon",
+    company: "CodePath",
     position: "Software Development Engineer",
     duration: "JUL 2022 - PRESENT",
     responsibilities: [
@@ -11,10 +10,9 @@ const experiences = [
       "Design and build innovative technologies in a large distributed computing environment and help lead fundamental changes in the industry.",
       "Build distributed storage, index, and query systems that are scalable, fault-tolerant, low cost, and easy to manage/use."
     ],
-    // ... other properties
   },
   {
-    company: "Wattpad",
+    company: "The Difference",
     position: "Software Engineering Intern",
     duration: "MAY 2020 - APR 2021",
     responsibilities: [
@@ -22,37 +20,71 @@ const experiences = [
       "Iteratively built web experiences for 80 million users across high-traffic pages.",
       "Collaborated with senior engineers and product management following best practices for the full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations."
     ],
-    // ... other properties
   },
-  // ... other experiences
+  {
+    company: "Con Edison",
+    position: "Software Engineering Intern",
+    duration: "MAY 2020 - APR 2021",
+    responsibilities: [
+      "Collaborate with experienced cross-disciplinary Amazonians to conceive, design, and bring innovative products and services to market.",
+      "Design and build innovative technologies in a large distributed computing environment and help lead fundamental changes in the industry.",
+      "Build distributed storage, index, and query systems that are scalable, fault-tolerant, low cost, and easy to manage/use."
+    ],
+  },
+
 ];
 
-function Experience() {
+
+function ExperienceSection() {
+  const [selectedExperience, setSelectedExperience] = useState(0);
+
+  const selectExperience = (index) => {
+    setSelectedExperience(index);
+  };
+
+
+
   return (
-    <div id="experience">
-      <div className="section-header">
-        <span className="section-title">/ experience</span>
-      </div>
-      <div className="experience-container">
-        {experiences.map((exp, index) => (
-          <div key={index} className={`job-item ${index === 0 ? 'active' : ''}`}>
-            <div className="job-header">
-              <span className="job-position">{exp.position} @ </span>
-              <span className="job-company">{exp.company}</span>
-              <div className="job-duration">{exp.duration}</div>
+    <div className="experience-box">
+          <div className="experience-selector">
+            <div className="selector-group">
+              <div className="company-list">
+                {experiences.map((exp, index) => (
+                  <div
+                    className={`company-name ${index === selectedExperience ? 'company-active' : ''}`}
+                    onClick={() => selectExperience(index)}
+                    key={index}
+                  >
+                    {exp.company}
+                  </div>
+                ))}
+              </div>
+              <div className="separator-line"></div>
             </div>
-            <ul className="job-responsibilities">
-              {exp.responsibilities.map((resp, respIndex) => (
-                <li key={respIndex} className={`responsibility-item delay-${respIndex}`}>
-                  {resp}
-                </li>
-              ))}
-            </ul>
           </div>
-        ))}
-      </div>
+          <div className="role-duration">
+              <div className="role-and-duration">
+                <span className="role-company">
+                  {experiences[selectedExperience].position} @ {experiences[selectedExperience].company}
+                  <br />
+                </span>
+                {experiences[selectedExperience].duration}
+              </div>
+          </div>
+          <div className="responsibility-list">
+            <div className="responsibilities">
+              <div>
+                {experiences[selectedExperience].responsibilities.map((resp, respIndex) => (
+                  <div key={respIndex} className="responsibility-item">
+                    {resp}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
     </div>
   );
 }
 
-export default Experience;
+export default ExperienceSection;
+
