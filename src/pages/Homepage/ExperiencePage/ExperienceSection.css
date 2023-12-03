@@ -14,66 +14,43 @@
 .company-list {
   height: 47px;
   position: relative;
-  width: 822px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .company-name {
   color: #000000;
   font-family: "Roboto-ExtraBold", Helvetica;
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: 0;
+  font-size: 20px;
+  font-weight: 600;
   line-height: 41.6px;
   text-align: center;
-  white-space: nowrap;
   cursor: pointer;
 }
 
-.company-name:nth-child(1) { /* Assuming this is for the first company */
-  width: 143px;
-  position: absolute;
-  left: 0;
-  top: 1px;
+.company-name:nth-child(1) {
+  width: 100px; /* Adjusted width */
+  left: calc(50% - 400px); /* Adjusted left position for centering */
 }
 
-.company-name:nth-child(2) { /* For the second company */
-  width: 155px;
-  position: absolute;
-  left: 191px;
-  top: 0;
+.company-name:nth-child(2) {
+  width: 150px; /* Adjusted width */
 }
 
-.company-name:nth-child(3) { /* For the third company */
-  width: 209px;
-  position: absolute;
-  left: 394px;
-  top: 0;
+.company-name:nth-child(3) {
+  width: 150px; /* Adjusted width */
+  left: calc(50% - 75px); /* Adjusted left position for centering */
 }
 
-.company-name:nth-child(4) { /* For the fourth company */
-  width: 171px;
-  position: absolute;
-  left: 651px;
-  top: 0;
+.company-name:nth-child(4) {
+  width: 120px; /* Adjusted width */
+  left: calc(50% + 50px); /* Adjusted left position for centering */
 }
-
-
-/* .role-and-duration {
-  background-color: #e6beb5;
-  border-radius: 30px;
-  padding: 20px;
-  font-family: "Roboto-Medium", Helvetica;
-  font-size: 25px;
-  color: #000;
-  margin-bottom: 20px;
-} */
 
 .role-duration {
   height: 92px;
   width: 462px;
-  position: relative; /* Changed from fixed to relative for better alignment */
+  position: relative;
 }
 
 .role-duration .role-and-duration {
@@ -126,7 +103,7 @@
 .responsibility-list {
   height: 276px;
   width: 948px;
-  position: relative; /* Adjusted from fixed to relative for better integration */
+  position: relative; 
 }
 
 .responsibility-list .responsibilities {
