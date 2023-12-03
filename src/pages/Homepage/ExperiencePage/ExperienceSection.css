@@ -11,7 +11,56 @@
   padding: 20px;
 }
 
-.role-and-duration {
+.company-list {
+  height: 47px;
+  position: relative;
+  width: 822px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.company-name {
+  color: #000000;
+  font-family: "Roboto-ExtraBold", Helvetica;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 41.6px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.company-name:nth-child(1) { /* Assuming this is for the first company */
+  width: 143px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+.company-name:nth-child(2) { /* For the second company */
+  width: 155px;
+  position: absolute;
+  left: 191px;
+  top: 0;
+}
+
+.company-name:nth-child(3) { /* For the third company */
+  width: 209px;
+  position: absolute;
+  left: 394px;
+  top: 0;
+}
+
+.company-name:nth-child(4) { /* For the fourth company */
+  width: 171px;
+  position: absolute;
+  left: 651px;
+  top: 0;
+}
+
+
+/* .role-and-duration {
   background-color: #e6beb5;
   border-radius: 30px;
   padding: 20px;
@@ -19,9 +68,39 @@
   font-size: 25px;
   color: #000;
   margin-bottom: 20px;
+} */
+
+.role-duration {
+  height: 92px;
+  width: 462px;
+  position: relative; /* Changed from fixed to relative for better alignment */
 }
 
-.responsibility-item {
+.role-duration .role-and-duration {
+  background-color: #e6beb5;
+  border-radius: 30px;
+  height: 92px;
+  width: 462px;
+  color: #000000;
+  font-family: "Roboto-Medium", Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  position: absolute;
+  top: 6px;
+  left: 21px;
+  line-height: 41.6px;
+}
+
+.role-duration .role-company {
+  font-weight: 500;
+}
+
+.role-duration span {
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 20px;
+}
+
+/* .responsibility-item {
   list-style: none;
   padding: 0;
   font-family: "Roboto-Regular", Helvetica;
@@ -42,4 +121,58 @@
   width: 16px;
   height: 16px;
   background-size: cover;
+} */
+
+.responsibility-list {
+  height: 276px;
+  width: 948px;
+  position: relative; /* Adjusted from fixed to relative for better integration */
+}
+
+.responsibility-list .responsibilities {
+  height: 276px;
+  width: 950px;
+}
+
+.responsibility-list .responsibilities .div {
+  background-color: #f2e6d4;
+  border-radius: 30px;
+  height: 276px;
+  position: relative;
+  width: 948px;
+}
+
+.responsibility-list .responsibility-arrow {
+  height: 16px;
+  left: 21px;
+  position: absolute;
+  top: 192px;
+  width: 16px;
+}
+
+.responsibility-list .responsibility-img {
+  height: 16px;
+  left: 21px;
+  position: absolute;
+  top: 25px;
+  width: 16px;
+}
+
+.responsibility-list .responsibility-arrow-2 {
+  height: 16px;
+  left: 21px;
+  position: absolute;
+  top: 109px;
+  width: 16px;
+}
+
+.responsibility-list .responsibility-item {
+  list-style: none;
+  padding: 0;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 30px;
 }

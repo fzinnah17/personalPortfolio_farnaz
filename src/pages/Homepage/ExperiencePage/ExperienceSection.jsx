@@ -31,6 +31,16 @@ const experiences = [
       "Build distributed storage, index, and query systems that are scalable, fault-tolerant, low cost, and easy to manage/use."
     ],
   },
+  {
+    company: "Headstarter",
+    position: "Software Engineering Intern",
+    duration: "MAY 2020 - APR 2021",
+    responsibilities: [
+      "Collaborate with experienced cross-disciplinary Amazonians to conceive, design, and bring innovative products and services to market.",
+      "Design and build innovative technologies in a large distributed computing environment and help lead fundamental changes in the industry.",
+      "Build distributed storage, index, and query systems that are scalable, fault-tolerant, low cost, and easy to manage/use."
+    ],
+  },
 
 ];
 
