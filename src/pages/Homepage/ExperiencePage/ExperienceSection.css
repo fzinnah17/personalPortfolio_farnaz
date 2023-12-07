@@ -1,10 +1,8 @@
 .experience-box {
-  height: 450px;
-  position: absolute;
+  height: 500px;
   width: 790px;
   margin: auto;
   position: relative;
-  top: 0;
   background-color: #faf7f2;
   border: 5px solid #001f3f;
   border-radius: 30px;
@@ -29,22 +27,22 @@
 }
 
 .company-name:nth-child(1) {
-  width: 100px; /* Adjusted width */
-  left: calc(50% - 400px); /* Adjusted left position for centering */
+  width: 100px;
+  left: calc(50% - 400px);
 }
 
 .company-name:nth-child(2) {
-  width: 150px; /* Adjusted width */
+  width: 150px;
 }
 
 .company-name:nth-child(3) {
-  width: 150px; /* Adjusted width */
-  left: calc(50% - 75px); /* Adjusted left position for centering */
+  width: 150px;
+  left: calc(50% - 75px);
 }
 
 .company-name:nth-child(4) {
-  width: 120px; /* Adjusted width */
-  left: calc(50% + 50px); /* Adjusted left position for centering */
+  width: 120px;
+  left: calc(50% + 50px);
 }
 
 .role-duration {
@@ -74,10 +72,6 @@
   font-size: 15px;
 }
 
-/* .role-duration span {
-  font-family: "Roboto-Regular", Helvetica;
-} */
-
 /* .responsibility-item {
   list-style: none;
   padding: 0;
@@ -102,22 +96,29 @@
 } */
 
 .responsibility-list {
-  height: 276px;
-  width: 948px;
-  position: relative; 
+  height: 300px;
+  width: 700px;
+  position: relative;
+  background-color: #faf7f2;
+  border-radius: 30px;
+  left: 20px;
+  padding-top: 25px;
 }
 
 .responsibility-list .responsibilities {
-  height: 276px;
-  width: 950px;
+  color: #000000;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 31.6px;
+  top: 10px;
+  left: 20px;
 }
 
-.responsibility-list .responsibilities .div {
+.responsibility-list .responsibilities .responsibility-description {
   background-color: #f2e6d4;
   border-radius: 30px;
-  height: 276px;
   position: relative;
-  width: 948px;
 }
 
 .responsibility-list .responsibility-arrow {
@@ -148,7 +149,7 @@
   list-style: none;
   padding: 0;
   font-family: "Roboto-Regular", Helvetica;
-  font-size: 22px;
+  /* font-size: 22px; */
   color: #000;
   margin-bottom: 10px;
   position: relative;
