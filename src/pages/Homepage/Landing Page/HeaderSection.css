@@ -1,11 +1,10 @@
 .header-content-wrapper {
     position: relative;
     height: 4px;
-    width: 868px;
+    width: auto;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding-top: 130px;
 }
 .header-label {
     width: 100%;
@@ -13,7 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    /* justify-content: center; */
     position: relative;
     box-sizing: border-box;
 }

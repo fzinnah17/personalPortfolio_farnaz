@@ -3,7 +3,6 @@ import { FaJsSquare, FaPython, FaReact, FaJava, FaNode, FaHtml5, FaCss3 } from "
 import './PersonalInfo.css';
 
 function PersonalInfo() {
-    // Define your skills in an array
     const skills = [
         { Icon: FaJsSquare, text: "Javascript ES6+" },
         { Icon: FaPython, text: "Python" },

@@ -85,6 +85,7 @@ function ExperienceSection() {
 
 
   return (
+    <div className="experience-container">
     <div className="experience-box">
       <div className="experience-selector">
         <div className="selector-group">
@@ -124,6 +125,7 @@ function ExperienceSection() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

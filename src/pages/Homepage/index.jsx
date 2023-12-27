@@ -5,7 +5,6 @@ import throttle from 'lodash/throttle';
 import Landing from "./Landing Page/Landing";
 import AboutMyself from "./AboutPage/AboutMyself";
 import Sidebar from "./Sidebar";
-import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
