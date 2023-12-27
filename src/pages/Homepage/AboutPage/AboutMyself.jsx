@@ -8,13 +8,17 @@ function AboutMyself() {
     return (
         <div className="about-myself-page">
             <div className="about-myself-div">
-                <div className="image-container">
-                    <ProfilePic />
+                <div className="top-row">
+                    <div className="image-container">
+                        <ProfilePic />
+                    </div>
+                    <div className="about-me-container">
+                        <PersonalInfo />
+                    </div>
                 </div>
-                <div className="about-me-container">
-                    <PersonalInfo />
+                <div className="bottom-row">
+                    <NetworkingEvents />
                 </div>
-                <NetworkingEvents />
             </div>
         </div>
     );

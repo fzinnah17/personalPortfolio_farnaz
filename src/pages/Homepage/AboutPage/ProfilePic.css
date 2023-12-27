@@ -1,9 +1,13 @@
-.image-container img{
+.profile-pic-container {
+    position: relative;
+}
+
+.profile-pic-container img {
     border-radius: 25px;
     border: 5px solid #001f3f;
 }
 
-.image-container:hover {
+.profile-pic-container:hover {
     transform: translateY(-5px);
     transition: transform 0.3s ease;
 }

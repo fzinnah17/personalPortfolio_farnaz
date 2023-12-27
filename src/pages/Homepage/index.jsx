@@ -26,10 +26,10 @@ const HomePage = () => {
   const contactRef = useRef(null);
   //assigning different properties to the sections Array
   const sections = [
-    { className: 'landing-section', id: 'home', content: <MemoizedLanding contactRef={contactRef}/> , minHeight: '100vh' },
+    { className: 'landing-section', id: 'home', content: <MemoizedLanding contactRef={contactRef}/> , minHeight: '60vh' },
     { className: 'about-me-section', id: 'about-me', content: <MemoizedAboutMyself />, minHeight: '60vh' },
     { className: 'experience-section', id: 'experience', content: <MemoizedExperience />, minHeight: '60vh' },
-    { className: 'projects-section', id: 'projects', content: <MemoizedProjects />, minHeight: '70vh' },
+    { className: 'projects-section', id: 'projects', content: <MemoizedProjects />, minHeight: '60vh' },
     { className: 'contact-section', id: 'contact', content: <MemoizedContact />, minHeight: '60vh' },
     { className: 'footer-section', id: 'footer', content: <MemoizedFooter />, minHeight: '5vh' }
   ];
